@@ -6,13 +6,14 @@ using RiddleSolve.Model;
 
 namespace RiddleSolve.Benchmarks
 {
-    // |    Method |            Mean |         Error |        StdDev |    Gen 0 |    Gen 1 |    Gen 2 |  Allocated |
-    // |---------- |----------------:|--------------:|--------------:|---------:|---------:|---------:|-----------:|
-    // | GetBitmap |      1,032.3 ns |       7.80 ns |       6.51 ns |   0.2708 |        - |        - |      568 B |
-    // | GetPixels | 12,445,314.6 ns | 244,797.59 ns | 453,748.03 ns | 328.1250 | 328.1250 | 328.1250 | 22439901 B |
-    // |   Parsing |      3,175.2 ns |      24.80 ns |      21.98 ns |   2.7046 |        - |        - |     5656 B |
-    // |  Analysis |      3,249.1 ns |      21.55 ns |      16.82 ns |   1.8730 |        - |        - |     3920 B |
-    // |     Solve |        827.8 ns |       4.47 ns |       3.96 ns |   0.1640 |        - |        - |      344 B |
+    // |    Method |            Mean |         Error |        StdDev |          Median |    Gen 0 |    Gen 1 |    Gen 2 |  Allocated |
+    // |---------- |----------------:|--------------:|--------------:|----------------:|---------:|---------:|---------:|-----------:|
+    // | GetBitmap |        925.3 ns |       4.52 ns |       4.01 ns |        926.0 ns |   0.2708 |        - |        - |      568 B |
+    // | GetPixels | 10,831,605.3 ns | 204,213.66 ns | 473,296.21 ns | 10,673,020.3 ns | 328.1250 | 328.1250 | 328.1250 | 22439901 B |
+    // |   Parsing |      2,122.4 ns |       4.89 ns |       4.34 ns |      2,121.6 ns |   2.6360 |        - |        - |     5512 B |
+    // |  Analysis |      8,212.1 ns |      35.37 ns |      33.09 ns |      8,215.7 ns |   3.3264 |        - |        - |     6970 B |
+    // |     Solve |      1,284.0 ns |       2.07 ns |       1.61 ns |      1,284.4 ns |   0.1640 |        - |        - |      344 B |
+
     
     // If optimization needed GetPixels -> Parsing can be changed for working with bytes instead of colorss
     

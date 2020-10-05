@@ -25,7 +25,6 @@
     <e p="C:\Users\danys\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\danys\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_RiddleSolve.-25637812.00" t="ExcludeRecursive" />
     <e p="C:\Users\danys\Desktop\SmilesRiddle" t="IncludeFlat">
-      <e p=".git\info\exclude" t="IncludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="RiddleSolve" t="IncludeRecursive">
         <e p="App.xaml" t="Include" />
@@ -50,7 +49,7 @@
           <e p="Tile.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="App.g.cs" t="Include" />
               <e p="MainWindow.g.cs" t="Include" />
@@ -67,7 +66,7 @@
           <e p="bin" t="ExcludeRecursive" />
           <e p="CalculationBenchmarks.cs" t="Include" />
           <e p="obj" t="ExcludeRecursive">
-            <e p="Debug" t="Include">
+            <e p="Release" t="Include">
               <e p="netcoreapp3.1" t="Include">
                 <e p="RiddleSolve.Benchmarks.AssemblyInfo.cs" t="Include" />
               </e>
@@ -78,7 +77,10 @@
         </e>
         <e p="RiddleSolve.Tests" t="IncludeRecursive">
           <e p="bin" t="ExcludeRecursive" />
-          <e p="Calculation" t="Include" />
+          <e p="Calculation" t="Include">
+            <e p="AnalysisTests.cs" t="Include" />
+            <e p="SolverTests.cs" t="Include" />
+          </e>
           <e p="Model" t="Include">
             <e p="AnalysisTests.cs" t="Include" />
             <e p="FacePartTests.cs" t="Include" />
@@ -87,7 +89,7 @@
             <e p="TileTests.cs" t="Include" />
           </e>
           <e p="obj" t="ExcludeRecursive">
-            <e p="Debug" t="Include">
+            <e p="Release" t="Include">
               <e p="netcoreapp3.1" t="Include">
                 <e p="RiddleSolve.Tests.AssemblyInfo.cs" t="Include" />
               </e>

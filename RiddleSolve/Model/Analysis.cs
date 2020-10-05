@@ -21,6 +21,9 @@ namespace RiddleSolve.Model
         public void IncludeTile(Tile tile)
         {
             AddMatchingTile(Any, tile, TileRotation.Up);
+            AddMatchingTile(Any, tile, TileRotation.Left);
+            AddMatchingTile(Any, tile, TileRotation.Down);
+            AddMatchingTile(Any, tile, TileRotation.Right);
             AddMatchingTile(tile.Top, tile, TileRotation.Up);
             AddMatchingTile(tile.Right, tile, TileRotation.Left);
             AddMatchingTile(tile.Bottom, tile, TileRotation.Down);
