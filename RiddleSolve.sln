@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiddleSolve", "RiddleSolve\RiddleSolve.csproj", "{74B32F2F-C3CB-4BAB-B24F-E0073BB25067}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BD8B4F1A-490C-4FFF-B6B0-162BCE8E129A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiddleSolve.Benchmarks", "Tests\RiddleSolve.Benchmarks\RiddleSolve.Benchmarks.csproj", "{1D48993A-3ECA-4E59-8550-5546F8082AF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiddleSolve.Tests", "Tests\RiddleSolve.Tests\RiddleSolve.Tests.csproj", "{5E780C36-70F3-494C-80D6-2C264827B40C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B32F2F-C3CB-4BAB-B24F-E0073BB25067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B32F2F-C3CB-4BAB-B24F-E0073BB25067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B32F2F-C3CB-4BAB-B24F-E0073BB25067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B32F2F-C3CB-4BAB-B24F-E0073BB25067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D48993A-3ECA-4E59-8550-5546F8082AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D48993A-3ECA-4E59-8550-5546F8082AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D48993A-3ECA-4E59-8550-5546F8082AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D48993A-3ECA-4E59-8550-5546F8082AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E780C36-70F3-494C-80D6-2C264827B40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E780C36-70F3-494C-80D6-2C264827B40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E780C36-70F3-494C-80D6-2C264827B40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E780C36-70F3-494C-80D6-2C264827B40C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D48993A-3ECA-4E59-8550-5546F8082AF4} = {BD8B4F1A-490C-4FFF-B6B0-162BCE8E129A}
+		{5E780C36-70F3-494C-80D6-2C264827B40C} = {BD8B4F1A-490C-4FFF-B6B0-162BCE8E129A}
+	EndGlobalSection
+EndGlobal
