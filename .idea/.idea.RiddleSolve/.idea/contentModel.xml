@@ -27,6 +27,7 @@
     <e p="C:\Users\danys\Desktop\SmilesRiddle" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="RiddleSolve" t="IncludeRecursive">
+        <e p="Annotations.cs" t="Include" />
         <e p="App.xaml" t="Include" />
         <e p="App.xaml.cs" t="Include" />
         <e p="AssemblyInfo.cs" t="Include" />
@@ -35,9 +36,11 @@
           <e p="Analyser.cs" t="Include" />
           <e p="Loader.cs" t="Include" />
           <e p="Printer.cs" t="Include" />
+          <e p="SolutionDrawer.cs" t="Include" />
           <e p="Solver.cs" t="Include" />
           <e p="TileParser.cs" t="Include" />
         </e>
+        <e p="Constants.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="Model" t="Include">
@@ -49,7 +52,7 @@
           <e p="Tile.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="App.g.cs" t="Include" />
               <e p="MainWindow.g.cs" t="Include" />
@@ -59,6 +62,10 @@
         </e>
         <e p="riddle.bmp" t="Include" />
         <e p="RiddleSolve.csproj" t="IncludeRecursive" />
+        <e p="ViewModel" t="Include">
+          <e p="ResultViewModel.cs" t="Include" />
+          <e p="RotatedImageViewModel.cs" t="Include" />
+        </e>
       </e>
       <e p="RiddleSolve.sln" t="IncludeFlat" />
       <e p="Tests" t="Include">
@@ -66,7 +73,7 @@
           <e p="bin" t="ExcludeRecursive" />
           <e p="CalculationBenchmarks.cs" t="Include" />
           <e p="obj" t="ExcludeRecursive">
-            <e p="Release" t="Include">
+            <e p="Debug" t="Include">
               <e p="netcoreapp3.1" t="Include">
                 <e p="RiddleSolve.Benchmarks.AssemblyInfo.cs" t="Include" />
               </e>
@@ -89,7 +96,7 @@
             <e p="TileTests.cs" t="Include" />
           </e>
           <e p="obj" t="ExcludeRecursive">
-            <e p="Release" t="Include">
+            <e p="Debug" t="Include">
               <e p="netcoreapp3.1" t="Include">
                 <e p="RiddleSolve.Tests.AssemblyInfo.cs" t="Include" />
               </e>

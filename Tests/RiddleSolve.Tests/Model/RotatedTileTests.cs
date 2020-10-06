@@ -13,7 +13,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Left);
             Assert.AreEqual(upRotated.Left, top);
@@ -30,7 +30,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Up);
             Assert.AreEqual(upRotated.Left, left);
@@ -47,7 +47,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Right);
             Assert.AreEqual(upRotated.Left, bottom);
@@ -64,7 +64,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Down);
             Assert.AreEqual(upRotated.Left, right);
@@ -81,7 +81,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Down).GetComposedRotation(TileRotation.Down);
             Assert.AreEqual(upRotated.Left, left);
@@ -98,7 +98,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Right).GetComposedRotation(TileRotation.Right);
             Assert.AreEqual(upRotated.Left, right);
@@ -114,7 +114,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Down).GetComposedRotation(TileRotation.Right);
             Assert.AreEqual(upRotated.Left, top);
@@ -130,7 +130,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Left).GetComposedRotation(TileRotation.Left);
             Assert.AreEqual(upRotated.Left, right);
@@ -146,7 +146,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Left).GetComposedRotation(TileRotation.Right);
             Assert.AreEqual(upRotated.Left, left);

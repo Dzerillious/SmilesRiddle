@@ -4,13 +4,19 @@ namespace RiddleSolve.Model
 {
     public class Tile
     {
+        public int Row { get; }
+        public int Column { get; }
+        
         public FacePart Left { get; }
         public FacePart Top { get; }
         public FacePart Right { get; }
         public FacePart Bottom { get; }
 
-        public Tile(FacePart left, FacePart top, FacePart right, FacePart bottom)
+        public Tile(int row, int column, FacePart left, FacePart top, FacePart right, FacePart bottom)
         {
+            Row = row;
+            Column = column;
+            
             Left = left;
             Top = top;
             Right = right;

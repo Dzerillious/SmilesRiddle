@@ -7,24 +7,22 @@ namespace RiddleSolve.Calculation
 {
     public static class TileParser
     {
-        private const int TileSize = 297;
-        private const int SmileDistance = 77;
-        private const int ColorDistance = 100;
-        private static readonly Position HalfTile = new Position(TileSize / 2, TileSize / 2);
+        private static readonly Position HalfTile = new Position(Constants.TileSize / 2, Constants.TileSize / 2);
         
         public static Tile[,] ParseTiles(Color[] pixels, int width, int height)
         {
-            int columns = (width - 1) / TileSize;
-            int rows = (height - 1) / TileSize;
+            int columns = width / Constants.TileSize;
+            int rows = height / Constants.TileSize;
             var result = new Tile[rows, columns];
 
             for (var row = 0; row < rows; row++)
             for (var column = 0; column < columns; column++)
             {
                 Position position = (row, column);
-                Position tileMiddle = position * TileSize + HalfTile;
+                Position tileMiddle = position * Constants.TileSize + HalfTile;
                 result[row, column] = new Tile
                 (
+                    row, column,
                     GetFacePart(pixels, width, tileMiddle, Side.Left),
                     GetFacePart(pixels, width, tileMiddle, Side.Top),
                     GetFacePart(pixels, width, tileMiddle, Side.Right),
@@ -39,10 +37,10 @@ namespace RiddleSolve.Calculation
         {
             var relativePosition = side.ToRelativePosition();
             
-            var smilePosition = middle + relativePosition * SmileDistance;
+            var smilePosition = middle + relativePosition * Constants.SmileDistance;
             var partType = ParsePartType(pixels[smilePosition.GetIndex(rowPixels)]);
 
-            var colorPosition = middle + relativePosition * ColorDistance;
+            var colorPosition = middle + relativePosition * Constants.ColorDistance;
             var color = ParseColor(pixels[colorPosition.GetIndex(rowPixels)]);
             
             return new FacePart(partType, color);

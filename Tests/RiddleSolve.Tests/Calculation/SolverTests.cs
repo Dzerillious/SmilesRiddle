@@ -13,7 +13,8 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(new FacePart(PartType.Eyes, FaceColor.Green),
+                    new Tile(0, 0,
+                             new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue))
@@ -32,11 +33,13 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(new FacePart(PartType.Eyes, FaceColor.Green),
+                    new Tile(0, 0,
+                             new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
-                    new Tile(new FacePart(PartType.Mouth, FaceColor.Yellow),
+                    new Tile(0, 1,
+                             new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue))
@@ -55,13 +58,15 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(new FacePart(PartType.Eyes, FaceColor.Green),
+                    new Tile(0, 0,
+                             new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
                 },
                 {
-                    new Tile(new FacePart(PartType.Mouth, FaceColor.Yellow),
+                    new Tile(1, 0,
+                             new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue))
@@ -80,13 +85,15 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(new FacePart(PartType.Eyes, FaceColor.Green),
+                    new Tile(0, 0,
+                             new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
                 },
                 {
-                    new Tile(new FacePart(PartType.Mouth, FaceColor.Yellow),
+                    new Tile(1, 0,
+                             new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Blue))
@@ -104,21 +111,25 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(new FacePart(PartType.Eyes, FaceColor.Green),
+                    new Tile(0, 0,
+                             new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
-                    new Tile(new FacePart(PartType.Mouth, FaceColor.Yellow),
+                    new Tile(0, 1,
+                             new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue))
                 },
                 {
-                    new Tile(new FacePart(PartType.Mouth, FaceColor.Yellow),
+                    new Tile(1, 0,
+                             new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
-                    new Tile(new FacePart(PartType.Mouth, FaceColor.Green),
+                    new Tile(1, 1,
+                             new FacePart(PartType.Mouth, FaceColor.Green),
                              new FacePart(PartType.Mouth, FaceColor.Blue),
                              new FacePart(PartType.Eyes, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Yellow)),

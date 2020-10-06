@@ -12,7 +12,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Blue);
             var right = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Red);
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             Assert.AreEqual(tile.Left, left);
             Assert.AreEqual(tile.Top, top);
@@ -28,7 +28,7 @@ namespace RiddleSolve.Tests.Model
             var top = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Green);
             var right = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Yellow);
             var bottom = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Any);
-            var tile = new Tile(left, top, right, bottom);
+            var tile = new Tile(0, 0, left, top, right, bottom);
             
             Assert.AreEqual(tile.Left, left);
             Assert.AreEqual(tile.Top, top);

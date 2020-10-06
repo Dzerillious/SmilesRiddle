@@ -3,9 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        xmlns:viewModel="clr-namespace:RiddleSolve.ViewModel"
+        xmlns:riddleSolve="clr-namespace:RiddleSolve"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModel:ResultViewModel}"
+        Title="MainWindow" Height="1000" Width="1000"
+        Name="ThisWindow">
+        <Grid>
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ToggleButton Name="ToggleButton"
+                          Grid.Row="0"
+                          Content="Show solved"
+                          IsChecked="{Binding IsShowedSolved}"/>
+            <ItemsControl Name="ItemsControl" 
+                          Grid.Row="1"
+                          Width="{Binding Width}"
+                          Height="{Binding Height}"
+                          ItemsSource="{Binding Images}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image Name="Image" 
+                               Source="{Binding BitmapSource}"
+                               Width="{x:Static riddleSolve:Constants.DoubleTileSize}"
+                               Height="{x:Static riddleSolve:Constants.DoubleTileSize}"
+                               UseLayoutRounding="True"
+                               Margin="{Binding FromPosition}">
+                            <Image.RenderTransform>
+                                <RotateTransform Angle="0"
+                                                 CenterX="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"
+                                                 CenterY="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"/>
+                            </Image.RenderTransform>
+                            <Image.Triggers>
+                                <EventTrigger RoutedEvent="Image.MouseLeftButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetName="Image"
+                                                                Storyboard.TargetProperty="Margin"
+                                                                From="{Binding FromPosition}" 
+                                                                To="{Binding ToPosition}"
+                                                                Duration="0:0:2"/>
+                                            <DoubleAnimation Storyboard.TargetName="Image"
+                                                             Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
+                                                             From="0" To="{Binding Angle}" 
+                                                             Duration="0:0:2" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="Image.MouseRightButtonDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ThicknessAnimation Storyboard.TargetName="Image"
+                                                                Storyboard.TargetProperty="Margin"
+                                                                From="{Binding ToPosition}"
+                                                                To="{Binding FromPosition}"
+                                                                Duration="0:0:2"/>
+                                            <DoubleAnimation Storyboard.TargetName="Image"
+                                                             Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
+                                                             From="{Binding Angle}" To="0"
+                                                             Duration="0:0:2" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Image.Triggers>
+                        </Image>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
 </Window>
