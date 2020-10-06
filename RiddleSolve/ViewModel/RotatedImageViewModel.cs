@@ -1,12 +1,20 @@
 ﻿using System.Windows;
 using System.Windows.Media.Imaging;
+using GalaSoft.MvvmLight;
 using RiddleSolve.Model;
 using static RiddleSolve.Model.RotatedTile;
 
 namespace RiddleSolve.ViewModel
 {
-    public class RotatedImageViewModel
+    public class RotatedImageViewModel : ViewModelBase
     {
+        private bool _isShowedSolved;
+        public bool IsShowedSolved
+        {
+            get => _isShowedSolved;
+            set => Set(ref _isShowedSolved, value);
+        }
+        
         public Thickness FromPosition { get; }
         public Thickness ToPosition { get; }
         

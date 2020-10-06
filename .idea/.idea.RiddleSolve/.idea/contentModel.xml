@@ -41,8 +41,6 @@
           <e p="TileParser.cs" t="Include" />
         </e>
         <e p="Constants.cs" t="Include" />
-        <e p="MainWindow.xaml" t="Include" />
-        <e p="MainWindow.xaml.cs" t="Include" />
         <e p="Model" t="Include">
           <e p="Analysis.cs" t="Include" />
           <e p="FacePart.cs" t="Include" />
@@ -62,6 +60,12 @@
         </e>
         <e p="riddle.bmp" t="Include" />
         <e p="RiddleSolve.csproj" t="IncludeRecursive" />
+        <e p="View" t="Include">
+          <e p="MainWindow.xaml" t="Include" />
+          <e p="MainWindow.xaml.cs" t="Include" />
+          <e p="MovedImageControl.xaml" t="Include" />
+          <e p="MovedImageControl.xaml.cs" t="Include" />
+        </e>
         <e p="ViewModel" t="Include">
           <e p="ResultViewModel.cs" t="Include" />
           <e p="RotatedImageViewModel.cs" t="Include" />

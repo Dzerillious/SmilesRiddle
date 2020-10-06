@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
 
 namespace RiddleSolve.ViewModel
 {
@@ -9,9 +8,14 @@ namespace RiddleSolve.ViewModel
         public bool IsShowedSolved
         {
             get => _isShowedSolved;
-            set => Set(ref _isShowedSolved, value);
+            set
+            {
+                Set(ref _isShowedSolved, value);
+                foreach (RotatedImageViewModel image in Images)
+                    image.IsShowedSolved = value;
+            }
         }
-        
+
         public int Width { get; }
         public int Height { get; }
         
