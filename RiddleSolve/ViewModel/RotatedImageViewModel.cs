@@ -8,11 +8,11 @@ namespace RiddleSolve.ViewModel
 {
     public class RotatedImageViewModel : ViewModelBase
     {
-        private bool _isShowedSolved;
-        public bool IsShowedSolved
+        private bool _isDisplayedSolved;
+        public bool IsDisplayedSolved
         {
-            get => _isShowedSolved;
-            set => Set(ref _isShowedSolved, value);
+            get => _isDisplayedSolved;
+            set => Set(ref _isDisplayedSolved, value);
         }
         
         public Thickness FromPosition { get; }
@@ -21,14 +21,14 @@ namespace RiddleSolve.ViewModel
         public BitmapSource BitmapSource { get; }
         public double Angle { get; }
 
-        public RotatedImageViewModel(BitmapSource bitmapSource, RotatedTile rotation,
-            double fromLeft, double fromTop, double toLeft, double toTop)
+        public RotatedImageViewModel(BitmapSource bitmapSource, RotatedTile tile,
+            double unsolvedX, double unsolvedY, double solvedX, double solvedY)
         {
-            FromPosition = new Thickness(fromLeft, fromTop, 0, 0);
-            ToPosition = new Thickness(toLeft, toTop, 0, 0);
+            FromPosition = new Thickness(unsolvedX, unsolvedY, 0, 0);
+            ToPosition = new Thickness(solvedX, solvedY, 0, 0);
             
             BitmapSource = bitmapSource;
-            Angle = GetAngle(rotation);
+            Angle = GetAngle(tile);
         }
 
         private static double GetAngle(RotatedTile rotatedTile)

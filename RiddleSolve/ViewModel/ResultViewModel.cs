@@ -1,23 +1,26 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 
 namespace RiddleSolve.ViewModel
 {
     public class ResultViewModel : ViewModelBase
     {
-        private bool _isShowedSolved;
-        public bool IsShowedSolved
+        private bool _isDisplayedSolved;
+        public bool IsDisplayedSolved
         {
-            get => _isShowedSolved;
+            get => _isDisplayedSolved;
             set
             {
-                Set(ref _isShowedSolved, value);
+                Set(ref _isDisplayedSolved, value);
                 foreach (RotatedImageViewModel image in Images)
-                    image.IsShowedSolved = value;
+                    image.IsDisplayedSolved = value;
             }
         }
 
         public int Width { get; }
         public int Height { get; }
+        
+        public RelayCommand ToggleDisplaySolvedCommand { get; }
         
         public RotatedImageViewModel[] Images { get; }
 
@@ -26,6 +29,7 @@ namespace RiddleSolve.ViewModel
             Width = width;
             Height = height;
             Images = images;
+            ToggleDisplaySolvedCommand = new RelayCommand(() => IsDisplayedSolved = !IsDisplayedSolved);
         }
     }
 }

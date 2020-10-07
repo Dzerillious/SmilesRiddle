@@ -6,7 +6,7 @@ using RiddleSolve.ViewModel;
 
 namespace RiddleSolve.Calculation
 {
-    public static class SolutionDrawer
+    public static class ResultComposer
     {
         public static ResultViewModel GetResultViewModel(BitmapImage bitmapImage, RotatedTile[,] board)
         {
@@ -18,11 +18,12 @@ namespace RiddleSolve.Calculation
             for (var column = 0; column < columns; column++)
             {
                 var tile = board[row, column];
-                var bitmap = new CroppedBitmap(bitmapImage, new Int32Rect(tile.Tile.Column * Constants.TileSize + 1, tile.Tile.Row * Constants.TileSize + 1,
+                (int unsolvedX, int unsolvedY) = new Position(tile.Tile.Column, tile.Tile.Row) * Constants.TileSize;
+                (int solvedX, int solvedY) = new Position(column, row) * Constants.TileSize;
+                var bitmap = new CroppedBitmap(bitmapImage, new Int32Rect(unsolvedX + 1, unsolvedY + 1,
                                                                           Constants.TileSize - 1, Constants.TileSize - 1));
-                rotatedImages.Add(new RotatedImageViewModel(bitmap, tile,
-                                                            tile.Tile.Column * Constants.TileSize, tile.Tile.Row * Constants.TileSize,
-                                                            column * Constants.TileSize, row * Constants.TileSize));
+                rotatedImages.Add(new RotatedImageViewModel(bitmap, tile, 
+                                                            unsolvedX, unsolvedY, solvedX, solvedY));
             }
 
             return new ResultViewModel(columns * Constants.TileSize, rows * Constants.TileSize, rotatedImages.ToArray());

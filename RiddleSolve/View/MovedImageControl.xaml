@@ -7,9 +7,9 @@
              xmlns:view="clr-namespace:RiddleSolve.View"
              xmlns:viewModel="clr-namespace:RiddleSolve.ViewModel"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModel:RotatedImageViewModel}"
-             d:DesignHeight="300" d:DesignWidth="300"
              DataContextChanged="MovedImageControl_OnDataContextChanged"
-             Margin="{Binding FromPosition}">
+             Margin="{Binding FromPosition}"
+             Name="ThisImage">
     <Image.RenderTransform>
         <RotateTransform Angle="0"
                          CenterX="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"
@@ -20,11 +20,12 @@
             <BeginStoryboard>
                 <Storyboard>
                     <ThicknessAnimation Storyboard.TargetProperty="Margin"
-                                        From="{Binding FromPosition}" 
+                                        From="{Binding Margin, ElementName=ThisImage}" 
                                         To="{Binding ToPosition}"
                                         Duration="0:0:2"/>
                     <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
-                                     From="0" To="{Binding Angle}" 
+                                     From="{Binding (RenderTransform).(RotateTransform.Angle), ElementName=ThisImage}" 
+                                     To="{Binding Angle}" 
                                      Duration="0:0:2" />
                 </Storyboard>
             </BeginStoryboard>
@@ -33,11 +34,12 @@
             <BeginStoryboard>
                 <Storyboard>
                     <ThicknessAnimation Storyboard.TargetProperty="Margin"
-                                        From="{Binding ToPosition}"
+                                        From="{Binding Margin, ElementName=ThisImage}" 
                                         To="{Binding FromPosition}"
                                         Duration="0:0:2"/>
                     <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
-                                     From="{Binding Angle}" To="0"
+                                     From="{Binding (RenderTransform).(RotateTransform.Angle), ElementName=ThisImage}" 
+                                     To="0"
                                      Duration="0:0:2" />
                 </Storyboard>
             </BeginStoryboard>

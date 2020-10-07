@@ -16,7 +16,7 @@ namespace RiddleSolve.Calculation
             foreach (RotatedTile rotatedTile in tilePossibilities)
             {
                 if (UsedTiles.ContainsKey(rotatedTile.Tile)) continue;
-                board[position.Row, position.Column] = rotatedTile;
+                board[position.Y, position.X] = rotatedTile;
                 
                 UsedTiles[rotatedTile.Tile] = rotatedTile;
                 if (Solve(board, analysis, position.GetNext(board))) return true;
@@ -39,7 +39,7 @@ namespace RiddleSolve.Calculation
         private static FacePart GetFacePart(RotatedTile[,] board, Position position, Side side)
         {
             if (!position.IsInside(board)) return Any;
-            var rotatedTile = board[position.Row, position.Column];
+            var rotatedTile = board[position.Y, position.X];
             return rotatedTile.GetFacePart(side);
         }
     }

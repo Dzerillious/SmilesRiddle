@@ -36,7 +36,7 @@
           <e p="Analyser.cs" t="Include" />
           <e p="Loader.cs" t="Include" />
           <e p="Printer.cs" t="Include" />
-          <e p="SolutionDrawer.cs" t="Include" />
+          <e p="ResultComposer.cs" t="Include" />
           <e p="Solver.cs" t="Include" />
           <e p="TileParser.cs" t="Include" />
         </e>
@@ -53,8 +53,12 @@
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="App.g.cs" t="Include" />
-              <e p="MainWindow.g.cs" t="Include" />
+              <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
               <e p="RiddleSolve.AssemblyInfo.cs" t="Include" />
+              <e p="View" t="Include">
+                <e p="MainWindow.g.cs" t="Include" />
+                <e p="MovedImageControl.g.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>

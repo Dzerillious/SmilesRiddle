@@ -25,7 +25,7 @@ namespace RiddleSolve.View
             var result = new RotatedTile[tiles.GetLength(0), tiles.GetLength(1)];
 
             if (Solver.Solve(result, analysis, (0, 0)))
-                DataContext = SolutionDrawer.GetResultViewModel(bitmap, result);
+                DataContext = ResultComposer.GetResultViewModel(bitmap, result);
         }
     }
 }

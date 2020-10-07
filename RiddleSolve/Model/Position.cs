@@ -4,75 +4,75 @@ namespace RiddleSolve.Model
 {
     public sealed class Position : IEquatable<Position>
     {
-        public int Row { get; }
-        public int Column { get; }
+        public int Y { get; }
+        public int X { get; }
 
         public Position(Array array, int index)
         {
-            Row = index / array.GetLength(1);
-            Column = index % array.GetLength(1);
+            Y = index / array.GetLength(1);
+            X = index % array.GetLength(1);
         }
 
-        public Position(int row, int column)
+        public Position(int y, int x)
         {
-            Row = row;
-            Column = column;
+            Y = y;
+            X = x;
         }
 
         public bool IsInside(Array array)
-            => Row >= 0
-            && Column >= 0
-            && Row < array.GetLength(0) 
-            && Column < array.GetLength(1);
+            => Y >= 0
+            && X >= 0
+            && Y < array.GetLength(0) 
+            && X < array.GetLength(1);
         
         public Position GetNext(Array array)
             => new Position(array, GetIndex(array) + 1);
 
         public int GetIndex(Array array)
-            => Column + Row * array.GetLength(1);
+            => X + Y * array.GetLength(1);
 
         public int GetIndex(int arrayWidth)
-            => Column + Row * arrayWidth;
+            => X + Y * arrayWidth;
 
-        public void Deconstruct(out int row, out int column)
+        public void Deconstruct(out int y, out int x)
         {
-            row = Row;
-            column = Column;
+            y = Y;
+            x = X;
         }
 
-        public override string ToString() => $"({Row},{Column})";
+        public override string ToString() => $"({Y},{X})";
 
         public static implicit operator Position((int row, int column) position)
             => new Position(position.row, position.column);
 
         public static Position operator +(Position position1, Position position2)
-            => (position1.Row + position2.Row, position1.Column + position2.Column);
+            => (position1.Y + position2.Y, position1.X + position2.X);
 
         public static Position operator -(Position position1, Position position2)
-            => (position1.Row - position2.Row, position1.Column - position2.Column);
+            => (position1.Y - position2.Y, position1.X - position2.X);
 
         public static Position operator *(Position position, Position position2)
-            => (position.Row * position2.Row, position.Column * position2.Column);
+            => (position.Y * position2.Y, position.X * position2.X);
 
         public static Position operator *(Position position, int coefficient)
-            => (position.Row * coefficient, position.Column * coefficient);
+            => (position.Y * coefficient, position.X * coefficient);
 
         public static Position operator /(Position position, Position position2)
-            => (position.Row / position2.Row, position.Column * position2.Column);
+            => (position.Y / position2.Y, position.X * position2.X);
 
         public static Position operator /(Position position, int coefficient)
-            => (position.Row / coefficient, position.Column * coefficient);
+            => (position.Y / coefficient, position.X * coefficient);
 
         public bool Equals(Position other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return Row == other.Row && Column == other.Column;
+            return Y == other.Y && X == other.X;
         }
 
         public override bool Equals(object obj) => ReferenceEquals(this, obj) 
                                                 || obj is Position other && Equals(other);
 
-        public override int GetHashCode() => HashCode.Combine(Row, Column);
+        public override int GetHashCode() => HashCode.Combine(Y, X);
     }
 }
