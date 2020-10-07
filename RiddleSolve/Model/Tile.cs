@@ -2,21 +2,19 @@
 
 namespace RiddleSolve.Model
 {
-    public class Tile
+    public class Tile : ITile
     {
-        public int Row { get; }
-        public int Column { get; }
-        
+        public ITile.TileRotation Rotation => ITile.TileRotation.Up;
+        public Position TilePosition { get; }
+
         public FacePart Left { get; }
         public FacePart Top { get; }
         public FacePart Right { get; }
         public FacePart Bottom { get; }
 
-        public Tile(int row, int column, FacePart left, FacePart top, FacePart right, FacePart bottom)
+        public Tile(Position tilePosition, FacePart left, FacePart top, FacePart right, FacePart bottom)
         {
-            Row = row;
-            Column = column;
-            
+            TilePosition = tilePosition;
             Left = left;
             Top = top;
             Right = right;
@@ -32,6 +30,9 @@ namespace RiddleSolve.Model
                 Side.Bottom => Bottom,
                 _           => throw new ArgumentException("Invalid side of tile")
             };
+
+        public RotatedTile GetRotated(ITile.TileRotation rotation)
+            => new RotatedTile(this, rotation);
 
         public override string ToString() => $"l:{Left} t:{Top} r:{Right} b:{Bottom}";
     }

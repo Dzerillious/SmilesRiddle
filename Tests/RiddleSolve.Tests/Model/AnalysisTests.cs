@@ -26,7 +26,7 @@ namespace RiddleSolve.Tests.Model
         public void TileAnalysisAnyTest()
         {
             var analysis = new Analysis();
-            var tile = new Tile(0, 0, 
+            var tile = new Tile((0, 0),
                                 new FacePart(PartType.Eyes, FaceColor.Green), 
                                 new FacePart(PartType.Mouth, FaceColor.Red), 
                                 new FacePart(PartType.Eyes, FaceColor.Yellow), 
@@ -42,7 +42,7 @@ namespace RiddleSolve.Tests.Model
         public void TileAnalysisTopTest()
         {
             var analysis = new Analysis();
-            var tile = new Tile(0, 0, 
+            var tile = new Tile((0, 0), 
                                 new FacePart(PartType.Eyes, FaceColor.Green), 
                                 new FacePart(PartType.Mouth, FaceColor.Red), 
                                 new FacePart(PartType.Eyes, FaceColor.Yellow), 
@@ -65,7 +65,7 @@ namespace RiddleSolve.Tests.Model
         public void TileAnalysisLeftTest()
         {
             var analysis = new Analysis();
-            var tile = new Tile(0, 0, 
+            var tile = new Tile((0, 0), 
                                 new FacePart(PartType.Eyes, FaceColor.Green), 
                                 new FacePart(PartType.Mouth, FaceColor.Red), 
                                 new FacePart(PartType.Eyes, FaceColor.Yellow), 
@@ -88,7 +88,7 @@ namespace RiddleSolve.Tests.Model
         public void TileAnalysisBothTest()
         {
             var analysis = new Analysis();
-            var tile = new Tile(0, 0, 
+            var tile = new Tile((0, 0), 
                                 new FacePart(PartType.Eyes, FaceColor.Green), 
                                 new FacePart(PartType.Mouth, FaceColor.Red), 
                                 new FacePart(PartType.Eyes, FaceColor.Yellow), 

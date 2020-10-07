@@ -6,26 +6,26 @@ namespace RiddleSolve.Calculation
 {
     public static class Solver
     {
-        private static readonly Dictionary<Tile, RotatedTile> UsedTiles = new Dictionary<Tile, RotatedTile>();
+        private static readonly Dictionary<Position, ITile> UsedTiles = new Dictionary<Position, ITile>();
 
-        public static bool Solve(RotatedTile[,] board, Analysis analysis, Position position)
+        public static bool Solve(ITile[,] board, Analysis analysis, Position position)
         {
             if (!position.IsInside(board)) return true;
             var tilePossibilities = GetTilePossibilities(board, analysis, position);
                 
-            foreach (RotatedTile rotatedTile in tilePossibilities)
+            foreach (ITile tile in tilePossibilities)
             {
-                if (UsedTiles.ContainsKey(rotatedTile.Tile)) continue;
-                board[position.Y, position.X] = rotatedTile;
+                if (UsedTiles.ContainsKey(tile.TilePosition)) continue;
+                board[position.Y, position.X] = tile;
                 
-                UsedTiles[rotatedTile.Tile] = rotatedTile;
+                UsedTiles[tile.TilePosition] = tile;
                 if (Solve(board, analysis, position.GetNext(board))) return true;
-                UsedTiles.Remove(rotatedTile.Tile);
+                UsedTiles.Remove(tile.TilePosition);
             }
             return false;
         }
 
-        public static IEnumerable<RotatedTile> GetTilePossibilities(RotatedTile[,] board, Analysis analysis, Position position)
+        public static IEnumerable<ITile> GetTilePossibilities(ITile[,] board, Analysis analysis, Position position)
         {
             var upperPosition = position + Side.Top.ToRelativePosition();
             var upperFacePart = GetFacePart(board, upperPosition, Side.Bottom);
@@ -36,7 +36,7 @@ namespace RiddleSolve.Calculation
             return analysis.GetPossibleTiles(upperFacePart, leftFacePart);
         }
 
-        private static FacePart GetFacePart(RotatedTile[,] board, Position position, Side side)
+        private static FacePart GetFacePart(ITile[,] board, Position position, Side side)
         {
             if (!position.IsInside(board)) return Any;
             var rotatedTile = board[position.Y, position.X];

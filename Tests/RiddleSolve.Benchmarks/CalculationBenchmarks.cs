@@ -20,7 +20,7 @@ namespace RiddleSolve.Benchmarks
     [MemoryDiagnoser]
     public class CalculationBenchmarks
     {
-        private static Tile[,] _tiles;
+        private static ITile[,] _tiles;
         private static Analysis _analysis;
         private static BitmapImage _bitmap;
         private static Color[] _pixels;
@@ -47,7 +47,7 @@ namespace RiddleSolve.Benchmarks
         }
         
         [Benchmark]
-        public Tile[,] Parsing() => TileParser.ParseTiles(_pixels, _bitmap.PixelWidth, _bitmap.PixelHeight);
+        public ITile[,] Parsing() => TileParser.ParseTiles(_pixels, _bitmap.PixelWidth, _bitmap.PixelHeight);
 
         [GlobalSetup(Target = nameof(Analysis))]
         public void AnalysisSetup()

@@ -36,14 +36,17 @@
           <e p="Analyser.cs" t="Include" />
           <e p="Loader.cs" t="Include" />
           <e p="Printer.cs" t="Include" />
-          <e p="ResultComposer.cs" t="Include" />
           <e p="Solver.cs" t="Include" />
           <e p="TileParser.cs" t="Include" />
         </e>
         <e p="Constants.cs" t="Include" />
+        <e p="Converters" t="Include">
+          <e p="BooleanConverter.cs" t="Include" />
+        </e>
         <e p="Model" t="Include">
           <e p="Analysis.cs" t="Include" />
           <e p="FacePart.cs" t="Include" />
+          <e p="ITile.cs" t="Include" />
           <e p="Position.cs" t="Include" />
           <e p="RotatedTile.cs" t="Include" />
           <e p="Side.cs" t="Include" />
@@ -71,7 +74,7 @@
           <e p="MovedImageControl.xaml.cs" t="Include" />
         </e>
         <e p="ViewModel" t="Include">
-          <e p="ResultViewModel.cs" t="Include" />
+          <e p="MainWindowViewModel.cs" t="Include" />
           <e p="RotatedImageViewModel.cs" t="Include" />
         </e>
       </e>

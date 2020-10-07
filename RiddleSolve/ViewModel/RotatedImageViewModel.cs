@@ -2,7 +2,7 @@
 using System.Windows.Media.Imaging;
 using GalaSoft.MvvmLight;
 using RiddleSolve.Model;
-using static RiddleSolve.Model.RotatedTile;
+using static RiddleSolve.Model.ITile;
 
 namespace RiddleSolve.ViewModel
 {
@@ -21,7 +21,7 @@ namespace RiddleSolve.ViewModel
         public BitmapSource BitmapSource { get; }
         public double Angle { get; }
 
-        public RotatedImageViewModel(BitmapSource bitmapSource, RotatedTile tile,
+        public RotatedImageViewModel(BitmapSource bitmapSource, ITile tile,
             double unsolvedX, double unsolvedY, double solvedX, double solvedY)
         {
             FromPosition = new Thickness(unsolvedX, unsolvedY, 0, 0);
@@ -31,7 +31,7 @@ namespace RiddleSolve.ViewModel
             Angle = GetAngle(tile);
         }
 
-        private static double GetAngle(RotatedTile rotatedTile)
+        private static double GetAngle(ITile rotatedTile)
             => rotatedTile.Rotation switch
             {
                 TileRotation.Left  => -90,

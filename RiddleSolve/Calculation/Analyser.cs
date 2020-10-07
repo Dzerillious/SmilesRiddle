@@ -4,7 +4,7 @@ namespace RiddleSolve.Calculation
 {
     public static class Analyser
     {
-        public static Analysis Analyze(Tile[,] board)
+        public static Analysis Analyze(ITile[,] board)
         {
             var analysis = new Analysis();
             int rows = board.GetLength(0);

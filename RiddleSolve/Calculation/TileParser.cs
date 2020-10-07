@@ -9,11 +9,11 @@ namespace RiddleSolve.Calculation
     {
         private static readonly Position HalfTile = new Position(Constants.TileSize / 2, Constants.TileSize / 2);
         
-        public static Tile[,] ParseTiles(Color[] pixels, int width, int height)
+        public static ITile[,] ParseTiles(Color[] pixels, int width, int height)
         {
             int columns = width / Constants.TileSize;
             int rows = height / Constants.TileSize;
-            var result = new Tile[rows, columns];
+            var result = new ITile[rows, columns];
 
             for (var row = 0; row < rows; row++)
             for (var column = 0; column < columns; column++)
@@ -22,7 +22,7 @@ namespace RiddleSolve.Calculation
                 Position tileMiddle = position * Constants.TileSize + HalfTile;
                 result[row, column] = new Tile
                 (
-                    row, column,
+                    (row, column),
                     GetFacePart(pixels, width, tileMiddle, Side.Left),
                     GetFacePart(pixels, width, tileMiddle, Side.Top),
                     GetFacePart(pixels, width, tileMiddle, Side.Right),

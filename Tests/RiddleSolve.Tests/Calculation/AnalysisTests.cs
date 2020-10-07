@@ -14,7 +14,7 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(0, 0,
+                    new Tile((0, 0),
                              new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
@@ -30,13 +30,13 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(0, 0,
+                    new Tile((0, 0),
                              new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
                     
-                    new Tile(0, 1,
+                    new Tile((0, 1),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
@@ -52,7 +52,7 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(0, 0,
+                    new Tile((0, 0),
                              new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
@@ -60,7 +60,7 @@ namespace RiddleSolve.Tests.Calculation
                 },
                 {
                     
-                    new Tile(1, 0,
+                    new Tile((1, 0),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
@@ -76,26 +76,26 @@ namespace RiddleSolve.Tests.Calculation
             var analysis = Analyser.Analyze(new[,]
             {
                 {
-                    new Tile(0, 0, 
+                    new Tile((0, 0), 
                              new FacePart(PartType.Eyes, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
                     
-                    new Tile(0, 1,
+                    new Tile((0, 1),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Yellow),
                              new FacePart(PartType.Eyes, FaceColor.Blue))
                 },
                 {
-                    new Tile(1, 0,
+                    new Tile((1, 0),
                              new FacePart(PartType.Mouth, FaceColor.Blue),
                              new FacePart(PartType.Eyes, FaceColor.Red),
                              new FacePart(PartType.Mouth, FaceColor.Green),
                              new FacePart(PartType.Eyes, FaceColor.Blue)),
                     
-                    new Tile(1, 1,
+                    new Tile((1, 1),
                              new FacePart(PartType.Eyes, FaceColor.Yellow),
                              new FacePart(PartType.Mouth, FaceColor.Blue),
                              new FacePart(PartType.Eyes, FaceColor.Green),

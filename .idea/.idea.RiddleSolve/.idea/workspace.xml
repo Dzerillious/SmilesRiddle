@@ -23,18 +23,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80124e7a-7e89-4e26-a1f6-b0fcd0c623f0" name="Default Changelist" comment="Added show/hide solution button">
+    <list default="true" id="80124e7a-7e89-4e26-a1f6-b0fcd0c623f0" name="Default Changelist" comment="Improved naming, animation">
+      <change afterPath="$PROJECT_DIR$/RiddleSolve/Converters/BooleanConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RiddleSolve/Model/ITile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RiddleSolve/ViewModel/MainWindowViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RiddleSolve/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RiddleSolve/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RiddleSolve/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RiddleSolve/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RiddleSolve/Calculation/SolutionDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Calculation/ResultComposer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RiddleSolve/Calculation/Analyser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Calculation/Analyser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RiddleSolve/Calculation/ResultComposer.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RiddleSolve/Calculation/Solver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Calculation/Solver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RiddleSolve/Model/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Model/Position.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RiddleSolve/Calculation/TileParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Calculation/TileParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RiddleSolve/Model/Analysis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Model/Analysis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RiddleSolve/Model/RotatedTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Model/RotatedTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RiddleSolve/Model/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/Model/Tile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RiddleSolve/View/MovedImageControl.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/View/MovedImageControl.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RiddleSolve/View/MovedImageControl.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/View/MovedImageControl.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RiddleSolve/ViewModel/ResultViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/ViewModel/ResultViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RiddleSolve/ViewModel/ResultViewModel.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RiddleSolve/ViewModel/RotatedImageViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RiddleSolve/ViewModel/RotatedImageViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RiddleSolve.Benchmarks/CalculationBenchmarks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RiddleSolve.Benchmarks/CalculationBenchmarks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/AnalysisTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/AnalysisTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/SolverTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/SolverTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/AnalysisTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/AnalysisTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/RotatedTileTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/RotatedTileTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/TileTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/TileTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +66,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/70CDA170-D753-4E08-9BF1-5D9DF41F764E/13/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8E604C77-2D15-4B90-A34A-BDA2EFE2B56D/fa/460453b8/UIElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/1E0/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8E604C77-2D15-4B90-A34A-BDA2EFE2B56D/6a/8f395702/HwndSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/2c/0d3e3e74/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/86357F88-A691-4FA9-A845-32EFF03CBBB4/0/EventTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8E604C77-2D15-4B90-A34A-BDA2EFE2B56D/40/30ea60c6/RotateTransform.cs" root0="SKIP_HIGHLIGHTING" />
@@ -66,31 +78,40 @@
         <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/RiddleSolve.Tests.csproj" />
         <option value="$PROJECT_DIR$/Tests/RiddleSolve.Benchmarks/RiddleSolve.Benchmarks.csproj" />
         <option value="$PROJECT_DIR$/.idea/.idea.RiddleSolve/.idea/.name" />
-        <option value="$PROJECT_DIR$/RiddleSolve/Model/Analysis.cs" />
-        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Benchmarks/CalculationBenchmarks.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/App.xaml.cs" />
-        <option value="$PROJECT_DIR$/RiddleSolve/Model/Tile.cs" />
-        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/AnalysisTests.cs" />
-        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/SolverTests.cs" />
-        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/AnalysisTests.cs" />
-        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/RotatedTileTests.cs" />
-        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/TileTests.cs" />
-        <option value="$PROJECT_DIR$/RiddleSolve/Calculation/TileParser.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/Constants.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/Calculation/Loader.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/MainWindow.xaml.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/ViewModelChangeDispatcher.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/MainWindow.xaml" />
         <option value="$PROJECT_DIR$/RiddleSolve/App.xaml" />
-        <option value="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/View/MovedImageControl.xaml.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/Model/Position.cs" />
-        <option value="$PROJECT_DIR$/RiddleSolve/ViewModel/RotatedImageViewModel.cs" />
         <option value="$PROJECT_DIR$/RiddleSolve/Calculation/SolutionDrawer.cs" />
-        <option value="$PROJECT_DIR$/RiddleSolve/ViewModel/ResultViewModel.cs" />
-        <option value="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml" />
         <option value="$PROJECT_DIR$/RiddleSolve/View/MovedImageControl.xaml" />
         <option value="$PROJECT_DIR$/RiddleSolve/Calculation/ResultComposer.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Calculation/Analyser.cs" />
+        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/AnalysisTests.cs" />
+        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Calculation/SolverTests.cs" />
+        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/AnalysisTests.cs" />
+        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/TileTests.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Model/Rotation.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Model/ITile.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Model/Tile.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Model/RotatedTile.cs" />
+        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Tests/Model/RotatedTileTests.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Model/Analysis.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Calculation/TileParser.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Calculation/Solver.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/ViewModel/RotatedImageViewModel.cs" />
+        <option value="$PROJECT_DIR$/Tests/RiddleSolve.Benchmarks/CalculationBenchmarks.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/ViewModel/ResultViewModel.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/ViewModel/MainWindowViewModel.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Converters/BooleanToDoubleConverter.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Converters/BooleanToVisibilityConverter.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/Converters/BooleanConverter.cs" />
+        <option value="$PROJECT_DIR$/RiddleSolve/View/MainWindow.xaml" />
       </list>
     </option>
   </component>
@@ -159,7 +180,9 @@
       <workItem from="1601907565134" duration="1800000" />
       <workItem from="1601915432353" duration="10924000" />
       <workItem from="1601971356872" duration="4635000" />
-      <workItem from="1602054538740" duration="3323000" />
+      <workItem from="1602054538740" duration="4353000" />
+      <workItem from="1602062785355" duration="2273000" />
+      <workItem from="1602067044807" duration="2819000" />
     </task>
     <task id="LOCAL-00001" summary="Added unversioned project">
       <created>1601893176916</created>
@@ -189,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601994885919</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Improved naming, animation">
+      <created>1602061750741</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602061750741</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,101 +245,106 @@
     <MESSAGE value="Added analysis and solver tests" />
     <MESSAGE value="Implemented view" />
     <MESSAGE value="Added show/hide solution button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added show/hide solution button" />
+    <MESSAGE value="Improved naming, animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved naming, animation" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="955" height="464" key="DebuggerActiveHint" timestamp="1601994373221">
+    <state width="955" height="464" key="DebuggerActiveHint" timestamp="1602069541557">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="955" height="464" key="DebuggerActiveHint/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1601994373221" />
+    <state width="955" height="464" key="DebuggerActiveHint/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069541557" />
     <state x="215" y="104" key="DiffContextDialog" timestamp="1602061635172">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
     <state x="215" y="104" key="DiffContextDialog/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061635172" />
-    <state width="2235" height="453" key="GridCell.Tab.0.bottom" timestamp="1602061640863">
+    <state width="2235" height="453" key="GridCell.Tab.0.bottom" timestamp="1602069623778">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.0.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640863" />
-    <state width="2235" height="453" key="GridCell.Tab.0.center" timestamp="1602061640863">
+    <state width="2235" height="453" key="GridCell.Tab.0.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623778" />
+    <state width="2235" height="453" key="GridCell.Tab.0.center" timestamp="1602069623778">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.0.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640863" />
-    <state width="2235" height="453" key="GridCell.Tab.0.left" timestamp="1602061640863">
+    <state width="2235" height="453" key="GridCell.Tab.0.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623778" />
+    <state width="2235" height="453" key="GridCell.Tab.0.left" timestamp="1602069623778">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.0.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640863" />
-    <state width="2235" height="453" key="GridCell.Tab.0.right" timestamp="1602061640863">
+    <state width="2235" height="453" key="GridCell.Tab.0.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623778" />
+    <state width="2235" height="453" key="GridCell.Tab.0.right" timestamp="1602069623778">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.0.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640863" />
-    <state width="2235" height="453" key="GridCell.Tab.1.bottom" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.0.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623778" />
+    <state width="2235" height="453" key="GridCell.Tab.1.bottom" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.1.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.1.center" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.1.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.1.center" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.1.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.1.left" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.1.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.1.left" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.1.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.1.right" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.1.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.1.right" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.1.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.2.bottom" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.1.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.2.bottom" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.2.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.2.center" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.2.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.2.center" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.2.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.2.left" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.2.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.2.left" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.2.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.2.right" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.2.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.2.right" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.2.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.3.bottom" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.2.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.3.bottom" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.3.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.3.center" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.3.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.3.center" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.3.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.3.left" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.3.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.3.left" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.3.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.3.right" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.3.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.3.right" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.3.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.4.bottom" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.3.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.4.bottom" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.4.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.4.center" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.4.bottom/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.4.center" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.4.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.4.left" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.4.center/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.4.left" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.4.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
-    <state width="2235" height="453" key="GridCell.Tab.4.right" timestamp="1602061640652">
+    <state width="2235" height="453" key="GridCell.Tab.4.left/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
+    <state width="2235" height="453" key="GridCell.Tab.4.right" timestamp="1602069623574">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state width="2235" height="453" key="GridCell.Tab.4.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602061640652" />
+    <state width="2235" height="453" key="GridCell.Tab.4.right/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602069623574" />
     <state x="709" y="339" key="Rider.ProjectTemplateDialog.Size" timestamp="1601907573041">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
     <state x="709" y="339" key="Rider.ProjectTemplateDialog.Size/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1601907573041" />
+    <state x="937" y="281" key="RiderGenerateDialog" timestamp="1602067521796">
+      <screen x="0" y="0" width="2234" height="1216" />
+    </state>
+    <state x="937" y="281" key="RiderGenerateDialog/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602067521796" />
     <state x="882" y="318" key="RollbackChangesDialog" timestamp="1602061636388">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
@@ -326,16 +361,50 @@
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
     <state width="1125" height="615" key="XDebugger.FullValuePopup/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1601918658153" />
+    <state x="793" y="340" width="647" height="534" key="find.popup" timestamp="1602062844210">
+      <screen x="0" y="0" width="2234" height="1216" />
+    </state>
+    <state x="793" y="340" width="647" height="534" key="find.popup/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602062844210" />
     <state x="773" y="284" key="run.anything.popup" timestamp="1601915720837">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
     <state x="773" y="284" key="run.anything.popup/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1601915720837" />
-    <state x="780" y="268" width="672" height="678" key="search.everywhere.popup" timestamp="1602060685326">
+    <state x="780" y="268" width="672" height="678" key="search.everywhere.popup" timestamp="1602063045901">
       <screen x="0" y="0" width="2234" height="1216" />
     </state>
-    <state x="780" y="268" width="672" height="678" key="search.everywhere.popup/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602060685326" />
+    <state x="780" y="268" width="672" height="678" key="search.everywhere.popup/201.1440.1676.902/0.0.2234.1216@0.0.2234.1216" timestamp="1602063045901" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/RiddleSolve/ViewModel/MainWindowViewModel.cs</url>
+          <line>47</line>
+          <properties documentPath="C:\Users\danys\Desktop\SmilesRiddle\RiddleSolve\ViewModel\ResultViewModel.cs" initialLine="47">
+            <startOffsets>
+              <option value="1591" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1642" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/RiddleSolve/ViewModel/MainWindowViewModel.cs</url>
+          <line>36</line>
+          <properties documentPath="C:\Users\danys\Desktop\SmilesRiddle\RiddleSolve\ViewModel\ResultViewModel.cs" initialLine="36">
+            <startOffsets>
+              <option value="984" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1076" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="RiderUnitTests">
         <watch expression="Printer.Print(board)" language="C#" />
