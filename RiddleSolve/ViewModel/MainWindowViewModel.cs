@@ -67,7 +67,7 @@ namespace RiddleSolve.ViewModel
             for (var column = 0; column < columns; column++)
             {
                 var tile = board[row, column];
-                (int unsolvedY, int unsolvedX) = tile.TilePosition * Constants.TileSize;
+                (int unsolvedY, int unsolvedX) = tile.TileFromPosition * Constants.TileSize;
                 (int solvedY, int solvedX) = new Position(row, column) * Constants.TileSize;
                 var bitmap = new CroppedBitmap(bitmapImage, new Int32Rect(unsolvedX + 1, unsolvedY + 1,
                                                                           Constants.TileSize - 1, Constants.TileSize - 1));

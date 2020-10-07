@@ -32,8 +32,9 @@ namespace RiddleSolve.View
 
         private void ResultViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (ViewModel.IsDisplayedSolved) RaiseEvent(new RoutedEventArgs(ShowSolutionEvent));
-            else RaiseEvent(new RoutedEventArgs(HideSolutionEvent));
+            RaiseEvent(ViewModel.IsDisplayedSolved
+                           ? new RoutedEventArgs(ShowSolutionEvent)
+                           : new RoutedEventArgs(HideSolutionEvent));
         }
 
         private void MovedImageControl_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)

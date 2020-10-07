@@ -15,7 +15,7 @@
         /// <summary>
         /// Position of tile in unsolved board
         /// </summary>
-        Position TilePosition { get; }
+        Position TileFromPosition { get; }
         
         /// <summary>
         /// Face on left side of tile

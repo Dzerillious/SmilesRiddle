@@ -5,7 +5,7 @@ using System.Windows.Markup;
 
 namespace RiddleSolve.Converters
 {
-    public class BooleanMultiValueConverter : MarkupExtension, IValueConverter
+    public class BooleanConverter : MarkupExtension, IValueConverter
     {
         public object TrueValue { get; set; }
         public object FalseValue { get; set; }

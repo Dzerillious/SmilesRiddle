@@ -7,21 +7,18 @@
         xmlns:view="clr-namespace:RiddleSolve.View"
         xmlns:converters="clr-namespace:RiddleSolve.Converters"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModel:MainWindowViewModel}"
-        Title="MainWindow" Height="1000" Width="1000">
-        <Window.Resources>
-                <converters:BooleanMultiValueConverter x:Key="BooleanMultiValueConverter" />
-        </Window.Resources>
+        Title="MainWindow" Height="830" Width="972">
         <Viewbox Stretch="Uniform">
                 <Grid IsEnabled="{Binding HasSolution}">
                         <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
                         <ItemsControl Grid.Column="0"
                                       Width="{Binding Width}"
                                       Height="{Binding Height}"
                                       ItemsSource="{Binding Images}"
-                                      Opacity="{Binding HasSolution, Converter={converters:BooleanMultiValueConverter TrueValue=1, FalseValue=0.4}}">
+                                      Opacity="{Binding HasSolution, Converter={converters:BooleanConverter TrueValue=1, FalseValue=0.4}}">
                                 <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                                 <Canvas />
@@ -29,31 +26,20 @@
                                 </ItemsControl.ItemsPanel>
                                 <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                                <view:MovedImageControl Name="Image"
-                                                                        Source="{Binding BitmapSource}"
-                                                                        UseLayoutRounding="True" />
+                                                <view:MovedImageControl Source="{Binding BitmapSource}" />
                                         </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <ToggleButton Grid.Column="1"
-                                      IsChecked="{Binding IsDisplayedSolved}">
-                                <ToggleButton.Style>
-                                        <Style TargetType="ToggleButton">
-                                                <Setter Property="Content" Value="Show solved"/>
-                                                <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding IsDisplayedSolved}" Value="True">
-                                                                <Setter Property="Content" Value="Show unsolved"/>
-                                                        </DataTrigger>
-                                                </Style.Triggers>
-                                        </Style>
-                                </ToggleButton.Style>
-                        </ToggleButton>
+                        <Button Grid.Column="1" FontSize="20"
+                                Command="{Binding ToggleDisplaySolvedCommand}"
+                                Content="{Binding IsDisplayedSolved, 
+                                        Converter={converters:BooleanConverter TrueValue=Show unsolved, FalseValue=Show solved}}"/>
                         <TextBlock Grid.Column="0" Grid.ColumnSpan="2"
                                    Text="There is no solution"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontSize="60"
-                                   Visibility="{Binding HasSolution, Converter={converters:BooleanMultiValueConverter TrueValue=Collapsed, FalseValue=Visible}}"/>
+                                   Visibility="{Binding HasSolution, Converter={converters:BooleanConverter TrueValue=Collapsed, FalseValue=Visible}}"/>
                 </Grid>
         </Viewbox>
 </Window>

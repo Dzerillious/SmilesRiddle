@@ -6,7 +6,7 @@ namespace RiddleSolve.Calculation
 {
     public static class Solver
     {
-        private static readonly Dictionary<Position, ITile> UsedTiles = new Dictionary<Position, ITile>();
+        private static readonly HashSet<Position> UsedTiles = new HashSet<Position>();
 
         public static bool Solve(ITile[,] board, Analysis analysis, Position position)
         {
@@ -15,12 +15,12 @@ namespace RiddleSolve.Calculation
                 
             foreach (ITile tile in tilePossibilities)
             {
-                if (UsedTiles.ContainsKey(tile.TilePosition)) continue;
+                if (UsedTiles.Contains(tile.TileFromPosition)) continue;
                 board[position.Y, position.X] = tile;
-                
-                UsedTiles[tile.TilePosition] = tile;
+
+                UsedTiles.Add(tile.TileFromPosition);
                 if (Solve(board, analysis, position.GetNext(board))) return true;
-                UsedTiles.Remove(tile.TilePosition);
+                UsedTiles.Remove(tile.TileFromPosition);
             }
             return false;
         }

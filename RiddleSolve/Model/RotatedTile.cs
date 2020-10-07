@@ -6,7 +6,7 @@ namespace RiddleSolve.Model
     {
         private readonly ITile _innerTile;
         
-        public Position TilePosition => _innerTile.TilePosition;
+        public Position TileFromPosition => _innerTile.TileFromPosition;
         public ITile.TileRotation Rotation { get; }
 
         public FacePart Left => GetFacePart(Side.Left);

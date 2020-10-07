@@ -5,7 +5,7 @@ namespace RiddleSolve.Model
     public class Tile : ITile
     {
         public ITile.TileRotation Rotation => ITile.TileRotation.Up;
-        public Position TilePosition { get; }
+        public Position TileFromPosition { get; }
 
         public FacePart Left { get; }
         public FacePart Top { get; }
@@ -14,7 +14,7 @@ namespace RiddleSolve.Model
 
         public Tile(Position tilePosition, FacePart left, FacePart top, FacePart right, FacePart bottom)
         {
-            TilePosition = tilePosition;
+            TileFromPosition = tilePosition;
             Left = left;
             Top = top;
             Right = right;

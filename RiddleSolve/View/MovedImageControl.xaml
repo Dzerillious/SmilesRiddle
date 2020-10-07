@@ -8,24 +8,31 @@
              xmlns:viewModel="clr-namespace:RiddleSolve.ViewModel"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModel:RotatedImageViewModel}"
              DataContextChanged="MovedImageControl_OnDataContextChanged"
-             Margin="{Binding FromPosition}"
              Name="ThisImage">
     <Image.RenderTransform>
-        <RotateTransform Angle="0"
-                         CenterX="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"
-                         CenterY="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"/>
+        <TransformGroup>
+            <RotateTransform Angle="0"
+                             CenterX="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"
+                             CenterY="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"/>
+            <TranslateTransform X="{Binding UnsolvedX}" 
+                                Y="{Binding UnsolvedY}" />
+        </TransformGroup>
     </Image.RenderTransform>
     <Image.Triggers>
         <EventTrigger RoutedEvent="view:MovedImageControl.ShowSolution">
             <BeginStoryboard>
                 <Storyboard>
-                    <ThicknessAnimation Storyboard.TargetProperty="Margin"
-                                        From="{Binding Margin, ElementName=ThisImage}" 
-                                        To="{Binding ToPosition}"
-                                        Duration="0:0:2"/>
-                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
-                                     From="{Binding (RenderTransform).(RotateTransform.Angle), ElementName=ThisImage}" 
+                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                     From="{Binding (RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle), ElementName=ThisImage}" 
                                      To="{Binding Angle}" 
+                                     Duration="0:0:2" />
+                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                     From="{Binding (RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y), ElementName=ThisImage}" 
+                                     To="{Binding SolvedY}" 
+                                     Duration="0:0:2" />
+                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                     From="{Binding (RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X), ElementName=ThisImage}" 
+                                     To="{Binding SolvedX}" 
                                      Duration="0:0:2" />
                 </Storyboard>
             </BeginStoryboard>
@@ -33,13 +40,17 @@
         <EventTrigger RoutedEvent="view:MovedImageControl.HideSolution">
             <BeginStoryboard>
                 <Storyboard>
-                    <ThicknessAnimation Storyboard.TargetProperty="Margin"
-                                        From="{Binding Margin, ElementName=ThisImage}" 
-                                        To="{Binding FromPosition}"
-                                        Duration="0:0:2"/>
-                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)"
-                                     From="{Binding (RenderTransform).(RotateTransform.Angle), ElementName=ThisImage}" 
+                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                     From="{Binding (RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle), ElementName=ThisImage}" 
                                      To="0"
+                                     Duration="0:0:2" />
+                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                     From="{Binding (RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y), ElementName=ThisImage}" 
+                                     To="{Binding UnsolvedY}" 
+                                     Duration="0:0:2" />
+                    <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                     From="{Binding (RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X), ElementName=ThisImage}" 
+                                     To="{Binding UnsolvedX}" 
                                      Duration="0:0:2" />
                 </Storyboard>
             </BeginStoryboard>
