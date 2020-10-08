@@ -8,11 +8,11 @@ namespace RiddleSolve.ViewModel
 {
     public class RotatedImageViewModel : ViewModelBase
     {
-        private bool _isDisplayedSolved;
-        public bool IsDisplayedSolved
+        private bool _isSolvedDisplayed;
+        public bool IsSolvedDisplayed
         {
-            get => _isDisplayedSolved;
-            set => Set(ref _isDisplayedSolved, value);
+            get => _isSolvedDisplayed;
+            set => Set(ref _isSolvedDisplayed, value);
         }
         
         public double UnsolvedX { get; }
@@ -39,7 +39,7 @@ namespace RiddleSolve.ViewModel
             => rotatedTile.Rotation switch
             {
                 TileRotation.Left  => -90,
-                TileRotation.Up    => 0,
+                TileRotation.None    => 0,
                 TileRotation.Right => 90,
                 TileRotation.Down  => 180,
                 _                  => 0,

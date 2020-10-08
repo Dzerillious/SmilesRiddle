@@ -1,26 +1,27 @@
 ﻿using System.Collections.Generic;
+using RiddleSolve.Converters;
 using RiddleSolve.Model;
-using static RiddleSolve.Model.FacePart;
+using static RiddleSolve.Model.ITile;
 
 namespace RiddleSolve.Calculation
 {
-    public static class Solver
+    public class Solver
     {
-        private static readonly HashSet<Position> UsedTiles = new HashSet<Position>();
+        private readonly HashSet<Position> _usedTiles = new HashSet<Position>();
 
-        public static bool Solve(ITile[,] board, Analysis analysis, Position position)
+        public bool Solve(ITile[,] board, Analysis analysis, Position position)
         {
             if (!position.IsInside(board)) return true;
             var tilePossibilities = GetTilePossibilities(board, analysis, position);
                 
             foreach (ITile tile in tilePossibilities)
             {
-                if (UsedTiles.Contains(tile.TileFromPosition)) continue;
+                if (_usedTiles.Contains(tile.FromPosition)) continue;
                 board[position.Y, position.X] = tile;
 
-                UsedTiles.Add(tile.TileFromPosition);
+                _usedTiles.Add(tile.FromPosition);
                 if (Solve(board, analysis, position.GetNext(board))) return true;
-                UsedTiles.Remove(tile.TileFromPosition);
+                _usedTiles.Remove(tile.FromPosition);
             }
             return false;
         }
@@ -38,7 +39,7 @@ namespace RiddleSolve.Calculation
 
         private static FacePart GetFacePart(ITile[,] board, Position position, Side side)
         {
-            if (!position.IsInside(board)) return Any;
+            if (!position.IsInside(board)) return FacePart.Any;
             var rotatedTile = board[position.Y, position.X];
             return rotatedTile.GetFacePart(side);
         }

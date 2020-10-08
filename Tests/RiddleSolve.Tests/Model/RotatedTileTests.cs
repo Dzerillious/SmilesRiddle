@@ -16,11 +16,11 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Left);
-            Assert.AreEqual(upRotated.Left, top);
-            Assert.AreEqual(upRotated.Top, right);
-            Assert.AreEqual(upRotated.Right, bottom);
-            Assert.AreEqual(upRotated.Bottom, left);
-            Assert.AreEqual(upRotated.GetFacePart(Side.Right), upRotated.Right);
+            Assert.AreEqual(top, upRotated.Left);
+            Assert.AreEqual(right, upRotated.Top);
+            Assert.AreEqual(bottom, upRotated.Right);
+            Assert.AreEqual(left, upRotated.Bottom);
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
         }
         
         [Test]
@@ -32,12 +32,12 @@ namespace RiddleSolve.Tests.Model
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
             var tile = new Tile((0, 0), left, top, right, bottom);
             
-            var upRotated = new RotatedTile(tile, TileRotation.Up);
-            Assert.AreEqual(upRotated.Left, left);
-            Assert.AreEqual(upRotated.Top, top);
-            Assert.AreEqual(upRotated.Right, right);
-            Assert.AreEqual(upRotated.Bottom, bottom);
-            Assert.AreEqual(upRotated.GetFacePart(Side.Right), upRotated.Right);
+            var upRotated = new RotatedTile(tile, TileRotation.None);
+            Assert.AreEqual(left, upRotated.Left);
+            Assert.AreEqual(top, upRotated.Top);
+            Assert.AreEqual(right, upRotated.Right);
+            Assert.AreEqual(bottom, upRotated.Bottom);
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
         }
         
         [Test]
@@ -50,11 +50,11 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Right);
-            Assert.AreEqual(upRotated.Left, bottom);
-            Assert.AreEqual(upRotated.Top, left);
-            Assert.AreEqual(upRotated.Right, top);
-            Assert.AreEqual(upRotated.Bottom, right);
-            Assert.AreEqual(upRotated.GetFacePart(Side.Right), upRotated.Right);
+            Assert.AreEqual(bottom, upRotated.Left);
+            Assert.AreEqual(left, upRotated.Top);
+            Assert.AreEqual(top, upRotated.Right);
+            Assert.AreEqual(right, upRotated.Bottom);
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
         }
         
         [Test]
@@ -67,11 +67,11 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Down);
-            Assert.AreEqual(upRotated.Left, right);
-            Assert.AreEqual(upRotated.Top, bottom);
-            Assert.AreEqual(upRotated.Right, left);
-            Assert.AreEqual(upRotated.Bottom, top);
-            Assert.AreEqual(upRotated.GetFacePart(Side.Right), upRotated.Right);
+            Assert.AreEqual(right, upRotated.Left);
+            Assert.AreEqual(bottom, upRotated.Top);
+            Assert.AreEqual(left, upRotated.Right);
+            Assert.AreEqual(top, upRotated.Bottom);
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
         }
         
         [Test]
@@ -84,11 +84,11 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Down).GetRotated(TileRotation.Down);
-            Assert.AreEqual(upRotated.Left, left);
-            Assert.AreEqual(upRotated.Top, top);
-            Assert.AreEqual(upRotated.Right, right);
-            Assert.AreEqual(upRotated.Bottom, bottom);
-            Assert.AreEqual(upRotated.GetFacePart(Side.Right), upRotated.Right);
+            Assert.AreEqual(left, upRotated.Left);
+            Assert.AreEqual(top, upRotated.Top);
+            Assert.AreEqual(right, upRotated.Right);
+            Assert.AreEqual(bottom, upRotated.Bottom);
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
         }
         
         [Test]
@@ -101,10 +101,10 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Right).GetRotated(TileRotation.Right);
-            Assert.AreEqual(upRotated.Left, right);
-            Assert.AreEqual(upRotated.Top, bottom);
-            Assert.AreEqual(upRotated.Right, left);
-            Assert.AreEqual(upRotated.Bottom, top);
+            Assert.AreEqual(right, upRotated.Left);
+            Assert.AreEqual(bottom, upRotated.Top);
+            Assert.AreEqual(left, upRotated.Right);
+            Assert.AreEqual(top, upRotated.Bottom);
         }
         
         [Test]
@@ -117,10 +117,10 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Down).GetRotated(TileRotation.Right);
-            Assert.AreEqual(upRotated.Left, top);
-            Assert.AreEqual(upRotated.Top, right);
-            Assert.AreEqual(upRotated.Right, bottom);
-            Assert.AreEqual(upRotated.Bottom, left);
+            Assert.AreEqual(top, upRotated.Left);
+            Assert.AreEqual(right, upRotated.Top);
+            Assert.AreEqual(bottom, upRotated.Right);
+            Assert.AreEqual(left, upRotated.Bottom);
         }
         
         [Test]
@@ -133,10 +133,10 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Left).GetRotated(TileRotation.Left);
-            Assert.AreEqual(upRotated.Left, right);
-            Assert.AreEqual(upRotated.Top, bottom);
-            Assert.AreEqual(upRotated.Right, left);
-            Assert.AreEqual(upRotated.Bottom, top);
+            Assert.AreEqual(right, upRotated.Left);
+            Assert.AreEqual(bottom, upRotated.Top);
+            Assert.AreEqual(left, upRotated.Right);
+            Assert.AreEqual(top, upRotated.Bottom);
         }
         
         [Test]
@@ -149,10 +149,10 @@ namespace RiddleSolve.Tests.Model
             var tile = new Tile((0, 0), left, top, right, bottom);
             
             var upRotated = new RotatedTile(tile, TileRotation.Left).GetRotated(TileRotation.Right);
-            Assert.AreEqual(upRotated.Left, left);
-            Assert.AreEqual(upRotated.Top, top);
-            Assert.AreEqual(upRotated.Right, right);
-            Assert.AreEqual(upRotated.Bottom, bottom);
+            Assert.AreEqual(left, upRotated.Left);
+            Assert.AreEqual(top, upRotated.Top);
+            Assert.AreEqual(right, upRotated.Right);
+            Assert.AreEqual(bottom, upRotated.Bottom);
         }
     }
 }

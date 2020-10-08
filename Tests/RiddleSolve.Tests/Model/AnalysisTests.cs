@@ -18,7 +18,7 @@ namespace RiddleSolve.Tests.Model
             {
                 var facePart = new FacePart(partType, faceColor);
                 var possibleTiles = analysis.GetPossibleTiles(Any, facePart);
-                Assert.AreEqual(possibleTiles.Count(), 0);
+                Assert.AreEqual(0, possibleTiles.Count());
             }
         }
         

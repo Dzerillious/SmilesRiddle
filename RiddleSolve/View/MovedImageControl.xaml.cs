@@ -32,7 +32,7 @@ namespace RiddleSolve.View
 
         private void ResultViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            RaiseEvent(ViewModel.IsDisplayedSolved
+            RaiseEvent(ViewModel.IsSolvedDisplayed
                            ? new RoutedEventArgs(ShowSolutionEvent)
                            : new RoutedEventArgs(HideSolutionEvent));
         }

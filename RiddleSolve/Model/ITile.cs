@@ -3,9 +3,14 @@
     public interface ITile
     {
         /// <summary>
-        /// Possible tile rotation
+        /// Possible tile sides
         /// </summary>
-        public enum TileRotation { Up, Right, Down, Left }
+        public enum Side { Left, Top, Right, Bottom }
+        
+        /// <summary>
+        /// Possible tile rotations
+        /// </summary>
+        public enum TileRotation { None, Right, Down, Left }
         
         /// <summary>
         /// Current tile rotation
@@ -15,7 +20,7 @@
         /// <summary>
         /// Position of tile in unsolved board
         /// </summary>
-        Position TileFromPosition { get; }
+        Position FromPosition { get; }
         
         /// <summary>
         /// Face on left side of tile
@@ -47,8 +52,8 @@
         /// <summary>
         /// Gets tile when applied rotation
         /// </summary>
-        /// <param name="rotation"></param>
+        /// <param name="addedRotation"></param>
         /// <returns></returns>
-        RotatedTile GetRotated(TileRotation rotation);
+        RotatedTile GetRotated(TileRotation addedRotation);
     }
 }

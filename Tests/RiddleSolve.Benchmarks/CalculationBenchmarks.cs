@@ -73,8 +73,8 @@ namespace RiddleSolve.Benchmarks
         [Benchmark]
         public bool Solve()
         {
-            var result = new RotatedTile[_tiles.GetLength(0), _tiles.GetLength(1)];
-            return Solver.Solve(result, _analysis, (0, 0));
+            var result = new ITile[_tiles.GetLength(0), _tiles.GetLength(1)];
+            return new Solver().Solve(result, _analysis, (0, 0));
         }
     }
 }

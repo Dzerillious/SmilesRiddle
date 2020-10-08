@@ -19,12 +19,12 @@ namespace RiddleSolve.Tests.Model
         {
             var one = new Position(1, 1);
             
-            Assert.AreEqual(one + (1, 1), new Position(2, 2));
-            Assert.AreEqual(one + (1, 2), new Position(2, 3));
-            Assert.AreEqual(one * 2, new Position(2, 2));
-            Assert.AreEqual(one * (1, 2), new Position(1, 2));
-            Assert.AreEqual(one - (1, 1), new Position(0, 0));
-            Assert.AreEqual(one - (2, 1), new Position(-1, 0));
+            Assert.AreEqual(new Position(2, 2), one + (1, 1));
+            Assert.AreEqual(new Position(2, 3), one + (1, 2));
+            Assert.AreEqual(new Position(2, 2), one * 2);
+            Assert.AreEqual(new Position(1, 2), one * (1, 2));
+            Assert.AreEqual(new Position(0, 0), one - (1, 1));
+            Assert.AreEqual(new Position(-1, 0), one - (2, 1));
         }
         
         [Test]
@@ -47,11 +47,11 @@ namespace RiddleSolve.Tests.Model
                  position.IsInside(array);
                  position = position.GetNext(array))
             {
-                Assert.AreEqual(currentIndex, position.GetIndex(array));
+                Assert.AreEqual(position.GetIndex(array), currentIndex);
                 currentIndex++;
             }
             
-            Assert.AreEqual(currentIndex, array.Length);
+            Assert.AreEqual(array.Length, currentIndex);
         }
     }
 }

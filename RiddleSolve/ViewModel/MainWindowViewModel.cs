@@ -13,39 +13,39 @@ namespace RiddleSolve.ViewModel
     {
         public bool HasSolution { get; }
 
-        private bool _isDisplayedSolved;
-        public bool IsDisplayedSolved
+        private bool _isSolvedDisplayed;
+        public bool IsSolvedDisplayed
         {
-            get => _isDisplayedSolved;
+            get => _isSolvedDisplayed;
             set
             {
-                Set(ref _isDisplayedSolved, value);
+                Set(ref _isSolvedDisplayed, value);
                 foreach (RotatedImageViewModel image in Images)
-                    image.IsDisplayedSolved = value;
+                    image.IsSolvedDisplayed = value;
             }
         }
 
         public int Width { get; }
         public int Height { get; }
         
-        public RelayCommand ToggleDisplaySolvedCommand { get; }
+        public RelayCommand ToggleSolvedDisplayedCommand { get; }
         
         public RotatedImageViewModel[] Images { get; }
 
         public MainWindowViewModel()
         {
-            ToggleDisplaySolvedCommand = new RelayCommand(() => IsDisplayedSolved = !IsDisplayedSolved);
+            ToggleSolvedDisplayedCommand = new RelayCommand(() => IsSolvedDisplayed = !IsSolvedDisplayed);
             
             var bitmapImage = Loader.GetBitmap();
             Color[] pixels = Loader.GetPixels(bitmapImage);
             ITile[,] board = TileParser.ParseTiles(pixels, bitmapImage.PixelWidth, bitmapImage.PixelHeight);
             Analysis analysis = Analyser.Analyze(board);
-            var result = new ITile[board.GetLength(0), board.GetLength(1)];
             
+            var result = new ITile[board.GetLength(0), board.GetLength(1)];
             Width = board.GetLength(0) * Constants.TileSize;
             Height = board.GetLength(1) * Constants.TileSize;
 
-            if (Solver.Solve(result, analysis, (0, 0)))
+            if (new Solver().Solve(result, analysis, (0, 0)))
             {
                 HasSolution = true;
                 Images = GetImageViewModels(bitmapImage, result);
@@ -67,7 +67,7 @@ namespace RiddleSolve.ViewModel
             for (var column = 0; column < columns; column++)
             {
                 var tile = board[row, column];
-                (int unsolvedY, int unsolvedX) = tile.TileFromPosition * Constants.TileSize;
+                (int unsolvedY, int unsolvedX) = tile.FromPosition * Constants.TileSize;
                 (int solvedY, int solvedX) = new Position(row, column) * Constants.TileSize;
                 var bitmap = new CroppedBitmap(bitmapImage, new Int32Rect(unsolvedX + 1, unsolvedY + 1,
                                                                           Constants.TileSize - 1, Constants.TileSize - 1));

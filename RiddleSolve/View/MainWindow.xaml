@@ -31,8 +31,8 @@
                                 </ItemsControl.ItemTemplate>
                         </ItemsControl>
                         <Button Grid.Column="1" FontSize="20"
-                                Command="{Binding ToggleDisplaySolvedCommand}"
-                                Content="{Binding IsDisplayedSolved, 
+                                Command="{Binding ToggleSolvedDisplayedCommand}"
+                                Content="{Binding IsSolvedDisplayed, 
                                         Converter={converters:BooleanConverter TrueValue=Show unsolved, FalseValue=Show solved}}"/>
                         <TextBlock Grid.Column="0" Grid.ColumnSpan="2"
                                    Text="There is no solution"

@@ -14,11 +14,11 @@ namespace RiddleSolve.Tests.Model
             var bottom = new FacePart(FacePart.PartType.Eyes, FacePart.FaceColor.Any);
             var tile = new Tile((0, 0), left, top, right, bottom);
             
-            Assert.AreEqual(tile.Left, left);
-            Assert.AreEqual(tile.Top, top);
-            Assert.AreEqual(tile.Right, right);
-            Assert.AreEqual(tile.Bottom, bottom);
-            Assert.AreEqual(tile.GetFacePart(Side.Right), right);
+            Assert.AreEqual(left, tile.Left);
+            Assert.AreEqual(top, tile.Top);
+            Assert.AreEqual(right, tile.Right);
+            Assert.AreEqual(bottom, tile.Bottom);
+            Assert.AreEqual(right, tile.GetFacePart(ITile.Side.Right));
         }
 
         [Test]
@@ -30,11 +30,11 @@ namespace RiddleSolve.Tests.Model
             var bottom = new FacePart(FacePart.PartType.Mouth, FacePart.FaceColor.Any);
             var tile = new Tile((0, 0), left, top, right, bottom);
             
-            Assert.AreEqual(tile.Left, left);
-            Assert.AreEqual(tile.Top, top);
-            Assert.AreEqual(tile.Right, right);
-            Assert.AreEqual(tile.Bottom, bottom);
-            Assert.AreEqual(tile.GetFacePart(Side.Right), right);
+            Assert.AreEqual(left, tile.Left);
+            Assert.AreEqual(top, tile.Top);
+            Assert.AreEqual(right, tile.Right);
+            Assert.AreEqual(bottom, tile.Bottom);
+            Assert.AreEqual(right, tile.GetFacePart(ITile.Side.Right));
         }
     }
 }

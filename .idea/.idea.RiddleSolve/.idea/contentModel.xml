@@ -41,6 +41,7 @@
         <e p="Constants.cs" t="Include" />
         <e p="Converters" t="Include">
           <e p="BooleanConverter.cs" t="Include" />
+          <e p="SideConverter.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="Analysis.cs" t="Include" />
@@ -48,7 +49,6 @@
           <e p="ITile.cs" t="Include" />
           <e p="Position.cs" t="Include" />
           <e p="RotatedTile.cs" t="Include" />
-          <e p="Side.cs" t="Include" />
           <e p="Tile.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

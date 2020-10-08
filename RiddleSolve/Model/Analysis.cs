@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using static RiddleSolve.Model.FacePart;
 using static RiddleSolve.Model.ITile;
 
 namespace RiddleSolve.Model
@@ -13,20 +12,20 @@ namespace RiddleSolve.Model
 
         public Analysis()
         {
-            foreach (PartType partType in Enum.GetValues(typeof(PartType)))
-            foreach (FaceColor faceColor in Enum.GetValues(typeof(FaceColor)))
+            foreach (FacePart.PartType partType in Enum.GetValues(typeof(FacePart.PartType)))
+            foreach (FacePart.FaceColor faceColor in Enum.GetValues(typeof(FacePart.FaceColor)))
                 _matchingTiles[new FacePart(partType, faceColor)] = new List<RotatedTile>();
         }
 
         public void IncludeTile(ITile tile)
         {
-            AddMatchingTile(Any, tile, TileRotation.Left);
-            AddMatchingTile(Any, tile, TileRotation.Up);
-            AddMatchingTile(Any, tile, TileRotation.Right);
-            AddMatchingTile(Any, tile, TileRotation.Down);
-            AddMatchingTile(tile.Right, tile, TileRotation.Left);
-            AddMatchingTile(tile.Top, tile, TileRotation.Up);
+            AddMatchingTile(FacePart.Any, tile, TileRotation.Right);
+            AddMatchingTile(FacePart.Any, tile, TileRotation.None);
+            AddMatchingTile(FacePart.Any, tile, TileRotation.Left);
+            AddMatchingTile(FacePart.Any, tile, TileRotation.Down);
             AddMatchingTile(tile.Left, tile, TileRotation.Right);
+            AddMatchingTile(tile.Top, tile, TileRotation.None);
+            AddMatchingTile(tile.Right, tile, TileRotation.Left);
             AddMatchingTile(tile.Bottom, tile, TileRotation.Down);
         }
 
@@ -37,11 +36,11 @@ namespace RiddleSolve.Model
             _matchingTiles[matchingFacePart].Add(rotatedTile);
         }
 
-        public IEnumerable<RotatedTile> GetPossibleTiles(FacePart upperMatchingFace, FacePart leftMatchingFace)
+        public IEnumerable<RotatedTile> GetPossibleTiles(FacePart upperFace, FacePart leftFace)
         {
-            List<RotatedTile> allTiles = _matchingTiles[Any];
-            List<RotatedTile> upperPossibilities = _matchingTiles[upperMatchingFace];
-            List<RotatedTile> leftPossibilities = _matchingTiles[leftMatchingFace];
+            List<RotatedTile> allTiles = _matchingTiles[FacePart.Any];
+            List<RotatedTile> upperPossibilities = _matchingTiles[upperFace];
+            List<RotatedTile> leftPossibilities = _matchingTiles[leftFace];
             var leftRotatedPossibilities =
                 leftPossibilities.Select(tile => tile.GetRotated(TileRotation.Left));
             

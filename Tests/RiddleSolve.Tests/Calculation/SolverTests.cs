@@ -10,7 +10,7 @@ namespace RiddleSolve.Tests.Calculation
         [Test]
         public void Solve11Test()
         {
-            var analysis = Analyser.Analyze(new[,]
+            var analysis = Analyser.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -20,17 +20,17 @@ namespace RiddleSolve.Tests.Calculation
                              new FacePart(PartType.Eyes, FaceColor.Blue))
                 }
             });
-            var board = new RotatedTile[1, 1];
-            var foundSolution = Solver.Solve(board, analysis, (0, 0));
+            var board = new ITile[1, 1];
+            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
             
-            Assert.AreEqual(foundSolution, true);
+            Assert.AreEqual(true, foundSolution);
             CheckSolution(board);
         }
         
         [Test]
         public void Solve12Test()
         {
-            var analysis = Analyser.Analyze(new[,]
+            var analysis = Analyser.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -45,17 +45,17 @@ namespace RiddleSolve.Tests.Calculation
                              new FacePart(PartType.Eyes, FaceColor.Blue))
                 }
             });
-            var board = new RotatedTile[1, 2];
-            var foundSolution = Solver.Solve(board, analysis, (0, 0));
+            var board = new ITile[1, 2];
+            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
             
-            Assert.AreEqual(foundSolution, true);
+            Assert.AreEqual(true, foundSolution);
             CheckSolution(board);
         }
         
         [Test]
         public void Solve21Test()
         {
-            var analysis = Analyser.Analyze(new[,]
+            var analysis = Analyser.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -72,17 +72,17 @@ namespace RiddleSolve.Tests.Calculation
                              new FacePart(PartType.Eyes, FaceColor.Blue))
                 }
             });
-            var board = new RotatedTile[2, 1];
-            var foundSolution = Solver.Solve(board, analysis, (0, 0));
+            var board = new ITile[2, 1];
+            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
             
-            Assert.AreEqual(foundSolution, true);
+            Assert.AreEqual(true, foundSolution);
             CheckSolution(board);
         }
         
         [Test]
         public void SolveFailTest()
         {
-            var analysis = Analyser.Analyze(new[,]
+            var analysis = Analyser.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -99,16 +99,16 @@ namespace RiddleSolve.Tests.Calculation
                              new FacePart(PartType.Eyes, FaceColor.Blue))
                 }
             });
-            var board = new RotatedTile[2, 1];
-            var foundSolution = Solver.Solve(board, analysis, (0, 0));
+            var board = new ITile[2, 1];
+            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
             
-            Assert.AreEqual(foundSolution, false);
+            Assert.AreEqual(false, foundSolution);
         }
         
         [Test]
         public void Solve22Test()
         {
-            var analysis = Analyser.Analyze(new[,]
+            var analysis = Analyser.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -135,26 +135,32 @@ namespace RiddleSolve.Tests.Calculation
                              new FacePart(PartType.Mouth, FaceColor.Yellow)),
                 }
             });
-            var board = new RotatedTile[2, 2];
-            var foundSolution = Solver.Solve(board, analysis, (0, 0));
+            var board = new ITile[2, 2];
+            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
             
-            Assert.AreEqual(foundSolution, true);
+            Assert.AreEqual(true, foundSolution);
             CheckSolution(board);
         }
 
-        private void CheckSolution(RotatedTile[,] board)
+        private void CheckSolution(ITile[,] board)
         {
             int rows = board.GetLength(0);
             int columns = board.GetLength(1);
             
-            for (var row = 0; row < rows - 1; row++)
-            for (var column = 0; column < columns - 1; column++)
+            for (var row = 0; row < rows; row++)
+            for (var column = 0; column < columns; column++)
             {
                 var tile = board[row, column];
-                var rightTile = board[row, column + 1];
-                var bottomTile = board[row + 1, column];
-                Assert.AreEqual(tile.Right, rightTile.Left.GetMatching());
-                Assert.AreEqual(tile.Bottom, bottomTile.Top.GetMatching());
+                if (column + 1 < columns)
+                {
+                    var rightTile = board[row, column + 1];
+                    Assert.AreEqual(tile.Right, rightTile.Left.GetMatching());
+                }
+                if (row + 1 < rows)
+                {
+                    var bottomTile = board[row + 1, column];
+                    Assert.AreEqual(tile.Bottom, bottomTile.Top.GetMatching());
+                }
             }
         }
     }

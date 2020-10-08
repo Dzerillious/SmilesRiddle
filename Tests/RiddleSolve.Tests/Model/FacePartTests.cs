@@ -12,12 +12,12 @@ namespace RiddleSolve.Tests.Model
             var anyAny = new FacePart(PartType.Any, FaceColor.Any);
             var matching = anyAny.GetMatching();
             
-            Assert.AreEqual(matching, new FacePart(PartType.Any, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Any, FaceColor.Blue));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Blue));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Yellow));
+            Assert.AreEqual(new FacePart(PartType.Any, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Any, FaceColor.Blue), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Blue), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Yellow), matching);
         }
 
         [Test]
@@ -26,12 +26,12 @@ namespace RiddleSolve.Tests.Model
             var mouthAny = new FacePart(PartType.Mouth, FaceColor.Any);
             var matching = mouthAny.GetMatching();
             
-            Assert.AreEqual(matching, new FacePart(PartType.Eyes, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Any, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Any, FaceColor.Green));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Green));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Blue));
+            Assert.AreEqual(new FacePart(PartType.Eyes, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Any, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Any, FaceColor.Green), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Green), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Blue), matching);
         }
 
         [Test]
@@ -40,13 +40,13 @@ namespace RiddleSolve.Tests.Model
             var mouthBlue = new FacePart(PartType.Mouth, FaceColor.Blue);
             var matching = mouthBlue.GetMatching();
             
-            Assert.AreEqual(matching, new FacePart(PartType.Eyes, FaceColor.Blue));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Any, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Any, FaceColor.Red));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Green));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Yellow));
+            Assert.AreEqual(new FacePart(PartType.Eyes, FaceColor.Blue), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Any, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Any, FaceColor.Red), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Green), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Yellow), matching);
         }
 
         [Test]
@@ -55,15 +55,15 @@ namespace RiddleSolve.Tests.Model
             var anyGreen = new FacePart(PartType.Any, FaceColor.Green);
             var matching = anyGreen.GetMatching();
             
-            Assert.AreNotEqual(matching, new FacePart(PartType.Any, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Any, FaceColor.Blue));
-            Assert.AreEqual(matching, new FacePart(PartType.Any, FaceColor.Green));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Green));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Eyes, FaceColor.Yellow));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Any));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Red));
-            Assert.AreNotEqual(matching, new FacePart(PartType.Mouth, FaceColor.Green));
+            Assert.AreNotEqual(new FacePart(PartType.Any, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Any, FaceColor.Blue), matching);
+            Assert.AreEqual(new FacePart(PartType.Any, FaceColor.Green), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Green), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Eyes, FaceColor.Yellow), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Any), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Red), matching);
+            Assert.AreNotEqual(new FacePart(PartType.Mouth, FaceColor.Green), matching);
         }
     }
 }

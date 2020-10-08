@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Drawing;
+using RiddleSolve.Converters;
 using RiddleSolve.Model;
 using static RiddleSolve.Model.FacePart;
-using Color = System.Drawing.Color;
+using static RiddleSolve.Model.ITile;
 
 namespace RiddleSolve.Calculation
 {
