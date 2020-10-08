@@ -7,7 +7,8 @@
         xmlns:view="clr-namespace:RiddleSolve.View"
         xmlns:converters="clr-namespace:RiddleSolve.Converters"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModel:MainWindowViewModel}"
-        Title="MainWindow" Height="830" Width="972">
+        Title="MainWindow" Height="830" Width="972"
+        ShowInTaskbar="True">
         <Viewbox Stretch="Uniform">
                 <Grid IsEnabled="{Binding HasSolution}">
                         <Grid.ColumnDefinitions>
@@ -18,7 +19,8 @@
                                       Width="{Binding Width}"
                                       Height="{Binding Height}"
                                       ItemsSource="{Binding Images}"
-                                      Opacity="{Binding HasSolution, Converter={converters:BooleanConverter TrueValue=1, FalseValue=0.4}}">
+                                      Opacity="{Binding HasSolution, 
+                                        Converter={converters:BooleanConverter TrueValue=1, FalseValue=0.4}}">
                                 <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                                 <Canvas />
@@ -39,7 +41,8 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    FontSize="60"
-                                   Visibility="{Binding HasSolution, Converter={converters:BooleanConverter TrueValue=Collapsed, FalseValue=Visible}}"/>
+                                   Visibility="{Binding HasSolution, 
+                                        Converter={converters:BooleanConverter TrueValue=Collapsed, FalseValue=Visible}}"/>
                 </Grid>
         </Viewbox>
 </Window>

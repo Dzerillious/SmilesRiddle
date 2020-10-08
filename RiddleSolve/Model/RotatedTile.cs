@@ -7,13 +7,14 @@ namespace RiddleSolve.Model
     {
         private readonly ITile _innerTile;
         
-        public Position FromPosition => _innerTile.FromPosition;
         public TileRotation Rotation { get; }
+        
+        public Position FromPosition => _innerTile.FromPosition;
 
-        public FacePart Left => GetFacePart(Side.Left);
-        public FacePart Top => GetFacePart(Side.Top);
-        public FacePart Right => GetFacePart(Side.Right);
-        public FacePart Bottom => GetFacePart(Side.Bottom);
+        public FacePart Left => GetFacePart(TileSide.Left);
+        public FacePart Top => GetFacePart(TileSide.Top);
+        public FacePart Right => GetFacePart(TileSide.Right);
+        public FacePart Bottom => GetFacePart(TileSide.Bottom);
 
         public RotatedTile(ITile innerTile, TileRotation rotation)
         {
@@ -27,11 +28,11 @@ namespace RiddleSolve.Model
             return _innerTile.GetRotated((TileRotation) composedRotation);
         }
 
-        public FacePart GetFacePart(Side side)
+        public FacePart GetFacePart(TileSide side)
         {
             TileRotation inverseRotation = 4 - Rotation;
             int resultSide = ((int) inverseRotation + (int) side) % 4;
-            return _innerTile.GetFacePart((Side) resultSide);
+            return _innerTile.GetFacePart((TileSide) resultSide);
         }
 
         public bool Equals(RotatedTile other)

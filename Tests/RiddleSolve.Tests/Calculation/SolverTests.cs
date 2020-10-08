@@ -21,7 +21,7 @@ namespace RiddleSolve.Tests.Calculation
                 }
             });
             var board = new ITile[1, 1];
-            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
+            var foundSolution = new Solver().Solve(board, analysis);
             
             Assert.AreEqual(true, foundSolution);
             CheckSolution(board);
@@ -46,7 +46,7 @@ namespace RiddleSolve.Tests.Calculation
                 }
             });
             var board = new ITile[1, 2];
-            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
+            var foundSolution = new Solver().Solve(board, analysis);
             
             Assert.AreEqual(true, foundSolution);
             CheckSolution(board);
@@ -73,7 +73,7 @@ namespace RiddleSolve.Tests.Calculation
                 }
             });
             var board = new ITile[2, 1];
-            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
+            var foundSolution = new Solver().Solve(board, analysis);
             
             Assert.AreEqual(true, foundSolution);
             CheckSolution(board);
@@ -100,7 +100,7 @@ namespace RiddleSolve.Tests.Calculation
                 }
             });
             var board = new ITile[2, 1];
-            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
+            var foundSolution = new Solver().Solve(board, analysis);
             
             Assert.AreEqual(false, foundSolution);
         }
@@ -136,7 +136,7 @@ namespace RiddleSolve.Tests.Calculation
                 }
             });
             var board = new ITile[2, 2];
-            var foundSolution = new Solver().Solve(board, analysis, (0, 0));
+            var foundSolution = new Solver().Solve(board, analysis);
             
             Assert.AreEqual(true, foundSolution);
             CheckSolution(board);

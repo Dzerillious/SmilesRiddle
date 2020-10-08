@@ -25,17 +25,17 @@ namespace RiddleSolve.Calculation
                 result[row, column] = new Tile
                 (
                     (row, column),
-                    GetFacePart(pixels, width, tileMiddle, Side.Left),
-                    GetFacePart(pixels, width, tileMiddle, Side.Top),
-                    GetFacePart(pixels, width, tileMiddle, Side.Right),
-                    GetFacePart(pixels, width, tileMiddle, Side.Bottom)
+                    GetFacePart(pixels, width, tileMiddle, TileSide.Left),
+                    GetFacePart(pixels, width, tileMiddle, TileSide.Top),
+                    GetFacePart(pixels, width, tileMiddle, TileSide.Right),
+                    GetFacePart(pixels, width, tileMiddle, TileSide.Bottom)
                 );
             }
 
             return result;
         }
 
-        private static FacePart GetFacePart(Color[] pixels, int rowPixels, Position middle, Side side)
+        private static FacePart GetFacePart(Color[] pixels, int rowPixels, Position middle, TileSide side)
         {
             var relativePosition = side.ToRelativePosition();
             

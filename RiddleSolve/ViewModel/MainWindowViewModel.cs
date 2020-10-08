@@ -12,6 +12,8 @@ namespace RiddleSolve.ViewModel
     public class MainWindowViewModel : ViewModelBase
     {
         public bool HasSolution { get; }
+        public int Width { get; }
+        public int Height { get; }
 
         private bool _isSolvedDisplayed;
         public bool IsSolvedDisplayed
@@ -24,9 +26,6 @@ namespace RiddleSolve.ViewModel
                     image.IsSolvedDisplayed = value;
             }
         }
-
-        public int Width { get; }
-        public int Height { get; }
         
         public RelayCommand ToggleSolvedDisplayedCommand { get; }
         
@@ -45,7 +44,7 @@ namespace RiddleSolve.ViewModel
             Width = board.GetLength(0) * Constants.TileSize;
             Height = board.GetLength(1) * Constants.TileSize;
 
-            if (new Solver().Solve(result, analysis, (0, 0)))
+            if (new Solver().Solve(result, analysis))
             {
                 HasSolution = true;
                 Images = GetImageViewModels(bitmapImage, result);
@@ -69,8 +68,8 @@ namespace RiddleSolve.ViewModel
                 var tile = board[row, column];
                 (int unsolvedY, int unsolvedX) = tile.FromPosition * Constants.TileSize;
                 (int solvedY, int solvedX) = new Position(row, column) * Constants.TileSize;
-                var bitmap = new CroppedBitmap(bitmapImage, new Int32Rect(unsolvedX + 1, unsolvedY + 1,
-                                                                          Constants.TileSize - 1, Constants.TileSize - 1));
+                var bitmap = new CroppedBitmap(bitmapImage, 
+                                               new Int32Rect(unsolvedX + 1, unsolvedY + 1, Constants.TileSize - 1, Constants.TileSize - 1));
                 rotatedImages.Add(new RotatedImageViewModel(bitmap, tile, unsolvedX, unsolvedY, solvedX, solvedY));
             }
 

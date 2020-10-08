@@ -6,16 +6,15 @@ using RiddleSolve.Model;
 
 namespace RiddleSolve.Benchmarks
 {
-    // |    Method |            Mean |         Error |        StdDev |          Median |    Gen 0 |    Gen 1 |    Gen 2 |  Allocated |
-    // |---------- |----------------:|--------------:|--------------:|----------------:|---------:|---------:|---------:|-----------:|
-    // | GetBitmap |        925.3 ns |       4.52 ns |       4.01 ns |        926.0 ns |   0.2708 |        - |        - |      568 B |
-    // | GetPixels | 10,831,605.3 ns | 204,213.66 ns | 473,296.21 ns | 10,673,020.3 ns | 328.1250 | 328.1250 | 328.1250 | 22439901 B |
-    // |   Parsing |      2,122.4 ns |       4.89 ns |       4.34 ns |      2,121.6 ns |   2.6360 |        - |        - |     5512 B |
-    // |  Analysis |      8,212.1 ns |      35.37 ns |      33.09 ns |      8,215.7 ns |   3.3264 |        - |        - |     6970 B |
-    // |     Solve |      1,284.0 ns |       2.07 ns |       1.61 ns |      1,284.4 ns |   0.1640 |        - |        - |      344 B |
-
+    // |    Method |            Mean |         Error |        StdDev |    Gen 0 |    Gen 1 |    Gen 2 |  Allocated |
+    // |---------- |----------------:|--------------:|--------------:|---------:|---------:|---------:|-----------:|
+    // | GetBitmap |        945.1 ns |       4.74 ns |       4.43 ns |   0.2708 |        - |        - |      568 B |
+    // | GetPixels | 11,020,150.0 ns | 217,004.76 ns | 448,152.46 ns | 343.7500 | 343.7500 | 343.7500 | 22440016 B |
+    // |   Parsing |      2,300.8 ns |      19.19 ns |      17.95 ns |   2.7733 |        - |        - |     5800 B |
+    // |  Analysis |      8,586.7 ns |      68.29 ns |      63.88 ns |   3.3264 |        - |        - |     6970 B |
+    // |     Solve |    251,453.6 ns |   1,659.44 ns |   1,552.24 ns |  83.4961 |        - |        - |   175042 B |
     
-    // If optimization needed GetPixels -> Parsing can be changed for working with bytes instead of colorss
+    // If optimization needed: GetPixels -> Parsing can be changed for working with bytes instead of colors
     
     [MemoryDiagnoser]
     public class CalculationBenchmarks
@@ -74,7 +73,7 @@ namespace RiddleSolve.Benchmarks
         public bool Solve()
         {
             var result = new ITile[_tiles.GetLength(0), _tiles.GetLength(1)];
-            return new Solver().Solve(result, _analysis, (0, 0));
+            return new Solver().Solve(result, _analysis);
         }
     }
 }

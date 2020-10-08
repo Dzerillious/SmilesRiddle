@@ -5,7 +5,7 @@
         /// <summary>
         /// Possible tile sides
         /// </summary>
-        public enum Side { Left, Top, Right, Bottom }
+        public enum TileSide { Left, Top, Right, Bottom }
         
         /// <summary>
         /// Possible tile rotations
@@ -47,7 +47,7 @@
         /// </summary>
         /// <param name="side"></param>
         /// <returns></returns>
-        FacePart GetFacePart(Side side);
+        FacePart GetFacePart(TileSide side);
         
         /// <summary>
         /// Gets tile when applied rotation

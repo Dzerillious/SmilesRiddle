@@ -32,6 +32,7 @@ namespace RiddleSolve.View
 
         private void ResultViewModelOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+            if (e.PropertyName != nameof(RotatedImageViewModel.IsSolvedDisplayed)) return;
             RaiseEvent(ViewModel.IsSolvedDisplayed
                            ? new RoutedEventArgs(ShowSolutionEvent)
                            : new RoutedEventArgs(HideSolutionEvent));

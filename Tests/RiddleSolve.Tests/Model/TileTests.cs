@@ -18,7 +18,7 @@ namespace RiddleSolve.Tests.Model
             Assert.AreEqual(top, tile.Top);
             Assert.AreEqual(right, tile.Right);
             Assert.AreEqual(bottom, tile.Bottom);
-            Assert.AreEqual(right, tile.GetFacePart(ITile.Side.Right));
+            Assert.AreEqual(right, tile.GetFacePart(ITile.TileSide.Right));
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace RiddleSolve.Tests.Model
             Assert.AreEqual(top, tile.Top);
             Assert.AreEqual(right, tile.Right);
             Assert.AreEqual(bottom, tile.Bottom);
-            Assert.AreEqual(right, tile.GetFacePart(ITile.Side.Right));
+            Assert.AreEqual(right, tile.GetFacePart(ITile.TileSide.Right));
         }
     }
 }

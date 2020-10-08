@@ -22,13 +22,13 @@ namespace RiddleSolve.Model
             Bottom = bottom;
         }
 
-        public FacePart GetFacePart(Side side)
+        public FacePart GetFacePart(TileSide side)
             => side switch
             {
-                Side.Left   => Left,
-                Side.Top    => Top,
-                Side.Right  => Right,
-                Side.Bottom => Bottom,
+                TileSide.Left   => Left,
+                TileSide.Top    => Top,
+                TileSide.Right  => Right,
+                TileSide.Bottom => Bottom,
                 _                 => throw new ArgumentException("Invalid side of tile")
             };
 

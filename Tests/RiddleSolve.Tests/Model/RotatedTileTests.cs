@@ -20,7 +20,7 @@ namespace RiddleSolve.Tests.Model
             Assert.AreEqual(right, upRotated.Top);
             Assert.AreEqual(bottom, upRotated.Right);
             Assert.AreEqual(left, upRotated.Bottom);
-            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(TileSide.Right));
         }
         
         [Test]
@@ -37,7 +37,7 @@ namespace RiddleSolve.Tests.Model
             Assert.AreEqual(top, upRotated.Top);
             Assert.AreEqual(right, upRotated.Right);
             Assert.AreEqual(bottom, upRotated.Bottom);
-            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(TileSide.Right));
         }
         
         [Test]
@@ -54,7 +54,7 @@ namespace RiddleSolve.Tests.Model
             Assert.AreEqual(left, upRotated.Top);
             Assert.AreEqual(top, upRotated.Right);
             Assert.AreEqual(right, upRotated.Bottom);
-            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(TileSide.Right));
         }
         
         [Test]
@@ -71,7 +71,7 @@ namespace RiddleSolve.Tests.Model
             Assert.AreEqual(bottom, upRotated.Top);
             Assert.AreEqual(left, upRotated.Right);
             Assert.AreEqual(top, upRotated.Bottom);
-            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(TileSide.Right));
         }
         
         [Test]
@@ -88,7 +88,7 @@ namespace RiddleSolve.Tests.Model
             Assert.AreEqual(top, upRotated.Top);
             Assert.AreEqual(right, upRotated.Right);
             Assert.AreEqual(bottom, upRotated.Bottom);
-            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(Side.Right));
+            Assert.AreEqual(upRotated.Right, upRotated.GetFacePart(TileSide.Right));
         }
         
         [Test]
