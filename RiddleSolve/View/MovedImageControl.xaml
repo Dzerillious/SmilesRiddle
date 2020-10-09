@@ -3,17 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:riddleSolve="clr-namespace:RiddleSolve"
              xmlns:view="clr-namespace:RiddleSolve.View"
              xmlns:viewModel="clr-namespace:RiddleSolve.ViewModel"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance viewModel:RotatedImageViewModel}"
              DataContextChanged="MovedImageControl_OnDataContextChanged"
-             Name="ThisImage">
+             Name="ThisImage"
+             RenderTransformOrigin="0.5, 0.5">
     <Image.RenderTransform>
         <TransformGroup>
-            <RotateTransform Angle="0"
-                             CenterX="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"
-                             CenterY="{x:Static riddleSolve:Constants.DoubleHalfTileSize}"/>
+            <RotateTransform />
             <TranslateTransform X="{Binding UnsolvedX}" 
                                 Y="{Binding UnsolvedY}" />
         </TransformGroup>
@@ -24,7 +22,7 @@
                 <Storyboard>
                     <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
                                      From="{Binding (RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle), ElementName=ThisImage}" 
-                                     To="{Binding Angle}" 
+                                     To="{Binding Angle}"
                                      Duration="0:0:2" />
                     <DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
                                      From="{Binding (RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y), ElementName=ThisImage}" 
