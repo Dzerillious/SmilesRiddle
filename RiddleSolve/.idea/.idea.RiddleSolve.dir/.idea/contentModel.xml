@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\danys\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\danys\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\danys\Desktop\SmilesRiddle\RiddleSolve" t="IncludeRecursive">
+      <e p="Annotations.cs" t="Include" />
+      <e p="App.xaml" t="Include" />
+      <e p="App.xaml.cs" t="Include" />
+      <e p="AssemblyInfo.cs" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Calculation" t="Include">
+        <e p="Analyser.cs" t="Include" />
+        <e p="Loader.cs" t="Include" />
+        <e p="Solver.cs" t="Include" />
+        <e p="TileParser.cs" t="Include" />
+      </e>
+      <e p="Constants.cs" t="Include" />
+      <e p="Converters" t="Include">
+        <e p="BooleanConverter.cs" t="Include" />
+        <e p="SideConverter.cs" t="Include" />
+      </e>
+      <e p="Model" t="Include">
+        <e p="Analysis.cs" t="Include" />
+        <e p="FacePart.cs" t="Include" />
+        <e p="ITile.cs" t="Include" />
+        <e p="Position.cs" t="Include" />
+        <e p="RotatedTile.cs" t="Include" />
+        <e p="Tile.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
+            <e p="RiddleSolve.AssemblyInfo.cs" t="Include" />
+            <e p="View" t="Include">
+              <e p="MainWindow.g.cs" t="Include" />
+              <e p="MovedImageControl.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="riddle.bmp" t="Include" />
+      <e p="RiddleSolve.csproj" t="IncludeRecursive" />
+      <e p="View" t="Include">
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="MovedImageControl.xaml" t="Include" />
+        <e p="MovedImageControl.xaml.cs" t="Include" />
+      </e>
+      <e p="ViewModel" t="Include">
+        <e p="MainWindowViewModel.cs" t="Include" />
+        <e p="RotatedImageViewModel.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

@@ -1,12 +1,11 @@
-﻿using System.Windows;
-using RiddleSolve.ViewModel;
+﻿using RiddleSolve.ViewModel;
 
 namespace RiddleSolve.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {

@@ -29,12 +29,10 @@ namespace RiddleSolve.Model
 
         public bool Equals(FacePart other) => Type == other.Type && Color == other.Color;
 
-        public override bool Equals(object obj) => obj is FacePart other && Equals(other);
+        public override bool Equals(object? obj) => obj is FacePart other && Equals(other);
 
         public override int GetHashCode() => HashCode.Combine((int) Type, (int) Color);
 
-        
         public override string ToString() => $"{Color.ToString()}{Type.ToString()}";
-        public string ToShortString() => $"{Color.ToString().Substring(0, 1)}{Type.ToString().Substring(0, 1)}";
     }
 }

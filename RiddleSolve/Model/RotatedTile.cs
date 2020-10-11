@@ -35,14 +35,14 @@ namespace RiddleSolve.Model
             return _innerTile.GetFacePart((TileSide) resultSide);
         }
 
-        public bool Equals(RotatedTile other)
+        public bool Equals(RotatedTile? other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
             return Rotation == other.Rotation && Equals(_innerTile, other._innerTile);
         }
 
-        public override bool Equals(object obj) 
+        public override bool Equals(object? obj) 
             => obj is RotatedTile tile && Equals(tile);
 
         public override int GetHashCode() => HashCode.Combine((int) Rotation, _innerTile);

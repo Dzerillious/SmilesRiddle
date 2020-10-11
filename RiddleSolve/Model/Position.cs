@@ -63,15 +63,15 @@ namespace RiddleSolve.Model
         public static Position operator /(Position position, int coefficient)
             => (position.Y / coefficient, position.X * coefficient);
 
-        public bool Equals(Position other)
+        public bool Equals(Position? other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
             return Y == other.Y && X == other.X;
         }
 
-        public override bool Equals(object obj) => ReferenceEquals(this, obj) 
-                                                || obj is Position other && Equals(other);
+        public override bool Equals(object? obj) => ReferenceEquals(this, obj) 
+                                                 || obj is Position other && Equals(other);
 
         public override int GetHashCode() => HashCode.Combine(Y, X);
     }

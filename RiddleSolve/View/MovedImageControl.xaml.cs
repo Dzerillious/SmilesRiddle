@@ -6,7 +6,7 @@ namespace RiddleSolve.View
 {
     public partial class MovedImageControl
     {
-        private RotatedImageViewModel ViewModel => DataContext as RotatedImageViewModel;
+        private RotatedImageViewModel ViewModel => (RotatedImageViewModel) DataContext;
         
         public static readonly RoutedEvent ShowSolutionEvent =  
             EventManager.RegisterRoutedEvent("ShowSolution", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(MovedImageControl)); 

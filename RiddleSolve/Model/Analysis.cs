@@ -12,9 +12,9 @@ namespace RiddleSolve.Model
 
         public Analysis()
         {
-            foreach (FacePart.PartType partType in Enum.GetValues(typeof(FacePart.PartType)))
-            foreach (FacePart.FaceColor faceColor in Enum.GetValues(typeof(FacePart.FaceColor)))
-                _matchingTiles[new FacePart(partType, faceColor)] = new List<RotatedTile>();
+            foreach (FacePart.PartType? partType in Enum.GetValues(typeof(FacePart.PartType)))
+            foreach (FacePart.FaceColor? faceColor in Enum.GetValues(typeof(FacePart.FaceColor)))
+                _matchingTiles[new FacePart(partType!.Value, faceColor!.Value)] = new List<RotatedTile>();
         }
 
         public void IncludeTile(ITile tile)
