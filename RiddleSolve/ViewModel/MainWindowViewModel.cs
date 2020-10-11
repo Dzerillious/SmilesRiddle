@@ -27,9 +27,9 @@ namespace RiddleSolve.ViewModel
             }
         }
         
-        public RelayCommand ToggleSolvedDisplayedCommand { get; }
-        
         public RotatedImageViewModel[] Images { get; }
+        
+        public RelayCommand ToggleSolvedDisplayedCommand { get; }
 
         public MainWindowViewModel()
         {
