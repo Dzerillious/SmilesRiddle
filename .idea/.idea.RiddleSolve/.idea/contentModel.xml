@@ -51,7 +51,7 @@
           <e p="Tile.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="App.g.cs" t="Include" />
               <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
@@ -82,7 +82,7 @@
           <e p="bin" t="ExcludeRecursive" />
           <e p="CalculationBenchmarks.cs" t="Include" />
           <e p="obj" t="ExcludeRecursive">
-            <e p="Release" t="Include">
+            <e p="Debug" t="Include">
               <e p="netcoreapp3.1" t="Include">
                 <e p="RiddleSolve.Benchmarks.AssemblyInfo.cs" t="Include" />
               </e>
@@ -105,7 +105,7 @@
             <e p="TileTests.cs" t="Include" />
           </e>
           <e p="obj" t="ExcludeRecursive">
-            <e p="Release" t="Include">
+            <e p="Debug" t="Include">
               <e p="netcoreapp3.1" t="Include">
                 <e p="RiddleSolve.Tests.AssemblyInfo.cs" t="Include" />
               </e>

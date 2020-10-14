@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace RiddleSolve.Model
 {
+    [DebuggerDisplay("{Color}{Type}")]
     public readonly struct FacePart : IEquatable<FacePart>
     {
         public static FacePart Any = new FacePart(PartType.Any, FaceColor.Any);
@@ -32,7 +34,5 @@ namespace RiddleSolve.Model
         public override bool Equals(object? obj) => obj is FacePart other && Equals(other);
 
         public override int GetHashCode() => HashCode.Combine((int) Type, (int) Color);
-
-        public override string ToString() => $"{Color.ToString()}{Type.ToString()}";
     }
 }

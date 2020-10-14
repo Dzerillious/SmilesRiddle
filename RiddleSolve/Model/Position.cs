@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace RiddleSolve.Model
 {
+    [DebuggerDisplay("({Y},{X})")]
     public sealed class Position : IEquatable<Position>
     {
         public int Y { get; }
@@ -39,8 +41,6 @@ namespace RiddleSolve.Model
             y = Y;
             x = X;
         }
-
-        public override string ToString() => $"({Y},{X})";
 
         public static implicit operator Position((int row, int column) position)
             => new Position(position.row, position.column);

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using static RiddleSolve.Model.ITile;
 
 namespace RiddleSolve.Model
 {
+    [DebuggerDisplay("l:{Left} t:{Top} r:{Right} b:{Bottom}")]
     public class RotatedTile : ITile, IEquatable<RotatedTile>
     {
         private readonly ITile _innerTile;
@@ -46,7 +48,5 @@ namespace RiddleSolve.Model
             => obj is RotatedTile tile && Equals(tile);
 
         public override int GetHashCode() => HashCode.Combine((int) Rotation, _innerTile);
-
-        public override string ToString() => $"l:{Left} t:{Top} r:{Right} b:{Bottom}";
     }
 }

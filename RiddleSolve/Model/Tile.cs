@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using static RiddleSolve.Model.ITile;
 
 namespace RiddleSolve.Model
 {
+    [DebuggerDisplay("l:{Left} t:{Top} r:{Right} b:{Bottom}")]
     public class Tile : ITile
     {
         public TileRotation Rotation => TileRotation.None;
@@ -34,7 +36,5 @@ namespace RiddleSolve.Model
 
         public RotatedTile GetRotated(TileRotation addedRotation)
             => new RotatedTile(this, addedRotation);
-
-        public override string ToString() => $"l:{Left} t:{Top} r:{Right} b:{Bottom}";
     }
 }
