@@ -57,7 +57,7 @@ namespace RiddleSolve.Benchmarks
         }
 
         [Benchmark]
-        public Analysis Analysis() => Analyser.Analyze(_tiles);
+        public Analysis Analysis() => Analyzer.Analyze(_tiles);
         
 
         [GlobalSetup(Target = nameof(Solve))]

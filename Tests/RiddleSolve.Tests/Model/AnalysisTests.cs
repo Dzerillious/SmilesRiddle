@@ -33,9 +33,11 @@ namespace RiddleSolve.Tests.Model
                                 new FacePart(PartType.Mouth, FaceColor.Green));
             analysis.IncludeTile(tile);
             
-            var possibleTiles = analysis.GetPossibleTiles(Any, Any);
-            foreach (RotatedTile possibleTile in possibleTiles)
-                Assert.AreEqual(possibleTile.Top, tile.Top);
+            var possibleTiles = analysis.GetPossibleTiles(Any, Any).ToArray();
+            Assert.IsTrue(possibleTiles.Any(rotatedTile => rotatedTile.Top.Equals(tile.Left)));
+            Assert.IsTrue(possibleTiles.Any(rotatedTile => rotatedTile.Top.Equals(tile.Top)));
+            Assert.IsTrue(possibleTiles.Any(rotatedTile => rotatedTile.Top.Equals(tile.Right)));
+            Assert.IsTrue(possibleTiles.Any(rotatedTile => rotatedTile.Top.Equals(tile.Bottom)));
         }
         
         [Test]

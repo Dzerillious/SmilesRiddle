@@ -38,7 +38,7 @@ namespace RiddleSolve.ViewModel
             var bitmapImage = Loader.GetBitmap();
             Color[] pixels = Loader.GetPixels(bitmapImage);
             ITile[,] board = TileParser.ParseTiles(pixels, bitmapImage.PixelWidth, bitmapImage.PixelHeight);
-            Analysis analysis = Analyser.Analyze(board);
+            Analysis analysis = Analyzer.Analyze(board);
             
             var result = new ITile[board.GetLength(0), board.GetLength(1)];
             Width = board.GetLength(0) * Constants.TileSize;

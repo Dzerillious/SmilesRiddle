@@ -2,7 +2,7 @@
 
 namespace RiddleSolve.Calculation
 {
-    public static class Analyser
+    public static class Analyzer
     {
         public static Analysis Analyze(ITile[,] board)
         {

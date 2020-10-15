@@ -11,7 +11,7 @@ namespace RiddleSolve.Tests.Calculation
         [Test]
         public void Analyze11TileTest()
         {
-            var analysis = Analyser.Analyze(new ITile[,]
+            var analysis = Analyzer.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -27,7 +27,7 @@ namespace RiddleSolve.Tests.Calculation
         [Test]
         public void Analyze12TilesTest()
         {
-            var analysis = Analyser.Analyze(new ITile[,]
+            var analysis = Analyzer.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -49,7 +49,7 @@ namespace RiddleSolve.Tests.Calculation
         [Test]
         public void Analyze21TilesTest()
         {
-            var analysis = Analyser.Analyze(new ITile[,]
+            var analysis = Analyzer.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0),
@@ -73,7 +73,7 @@ namespace RiddleSolve.Tests.Calculation
         [Test]
         public void Analyze22TilesTest()
         {
-            var analysis = Analyser.Analyze(new ITile[,]
+            var analysis = Analyzer.Analyze(new ITile[,]
             {
                 {
                     new Tile((0, 0), 
