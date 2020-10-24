@@ -23,8 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f04adaa-22af-47c1-adba-5489a32219a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.RiddleSolve/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.RiddleSolve/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.idea.RiddleSolve/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.RiddleSolve/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/MovedImageControl.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/View/MovedImageControl.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="RiddleSolve" type="DotNetProject" factoryName=".NET Project">
@@ -80,10 +81,11 @@
       <option name="presentableId" value="Default" />
       <updated>1602146189703</updated>
       <workItem from="1602146193265" duration="65000" />
+      <workItem from="1603269766421" duration="19000" />
     </task>
     <servers />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -95,6 +97,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

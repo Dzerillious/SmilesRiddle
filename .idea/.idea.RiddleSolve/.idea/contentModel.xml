@@ -32,7 +32,7 @@
         <e p="AssemblyInfo.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Calculation" t="Include">
-          <e p="Analyser.cs" t="Include" />
+          <e p="Analyzer.cs" t="Include" />
           <e p="Loader.cs" t="Include" />
           <e p="Solver.cs" t="Include" />
           <e p="TileParser.cs" t="Include" />
