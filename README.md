@@ -8,4 +8,5 @@ Output: Application which rotates and translates tiles to it's valid position.
 Contains simple benchmarks and unit tests. Contains animations invoked from VM with From and To binding.
 
 The riddle:
+
 ![riddle](https://user-images.githubusercontent.com/26441773/165456287-32dd4356-681a-447d-95a5-a9ea875b8890.jpg)
